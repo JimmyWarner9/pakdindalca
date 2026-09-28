@@ -2076,7 +2076,38 @@ video.site-bg-video {
     .cart {
         position: static;
     }
+@media (max-width: 640px) {
 
+    /* Footer sits at the very bottom, no photo strip under it */
+    body:has(.contact-section) {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    body:has(.contact-section) .contact-section {
+        flex: 1 0 auto;
+    }
+
+    /* Make the contact text readable over the photo */
+    .contact-info {
+        background: rgba(253, 251, 247, 0.9);
+        padding: 24px;
+        border-radius: 12px;
+    }
+
+    .contact-section .section-title,
+    .contact-row-text p,
+    .contact-row-text a {
+        text-shadow: none;
+    }
+
+    .contact-row-text h4 {
+        color: var(--gold);
+        text-shadow: none;
+    }
+}
 
     /* ─────────────────────────────────────
        MOBILE ABOUT VIDEO
