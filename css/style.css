@@ -1733,9 +1733,9 @@ video.site-bg-video {
 ───────────────────────────────────────── */
 .footer {
     position: relative;
-    background-color: var(--dark);
+    background-color: #4c4e41;
     background-image: url('../image/food-section/logo-section/pakdindalca_footer_landscape.jpg');
-    background-size: cover;
+    background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
     padding: 80px 0 32px;
@@ -1747,7 +1747,7 @@ video.site-bg-video {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(15, 20, 28, 0.6);
+    background: rgba(15, 20, 28, 0.75);
     z-index: 0;
     border-radius: 24px 24px 0 0;
 }
