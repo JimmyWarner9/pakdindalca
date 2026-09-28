@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order — Pak Din Nasi Dalcha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+<!-- ── NAVBAR (shared — see navbar.html) ── -->
+<header class="header">
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="navbar-logo-text">
+            <div class="navbar-PakDin-Dalca-Logo">
+                <img src="../image/food-section/logo-section/pakdin_dalca_logo.png"
+                     alt="Pak Din Nasi Dalca Logo" class="Pakdinlogo-icon">
+            </div>
+        </a>
+        <ul class="navbar-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="order.html" class="active">Order</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+</header>
+
+<!-- ── MENU ─────────────────────────────── -->
+<section class="menu-section" id="menu" style="padding-top: 160px;">
+    <div class="container">
+        <div class="menu-header reveal">
+            <span class="section-label">What We Serve</span>
+            <h2 class="section-title">Our Signature Dishes</h2>
+            <p class="section-lead">Every plate is built around the dalcha — a rich, spiced lentil-and-meat gravy that defines our kitchen.</p>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-card reveal">
+                <img class="menu-card-photo" src="" alt="Nasi Dalcha Kambing">
+                <div class="menu-card-body">
+                    <div class="menu-card-tag">Signature</div>
+                    <h3>Nasi Dalcha Kambing</h3>
+                    <p>Fluffy basmati rice served with our legendary mutton dalcha gravy, slow-cooked with cardamom, cinnamon and ghee.</p>
+                    <div class="menu-card-price">RM 14.90</div>
+                    <button type="button" class="add-to-order-btn" onclick="addToCart('Nasi Dalcha Kambing', 14.90)">Add to Order</button>
+                </div>
+            </div>
+
+            <div class="menu-card reveal">
+                <img class="menu-card-photo" src="" alt="Nasi Dalcha Ayam">
+                <div class="menu-card-body">
+                    <div class="menu-card-tag">Classic</div>
+                    <h3>Nasi Dalcha Ayam</h3>
+                    <p>Tender free-range chicken simmered in the same heritage dalcha base — a lighter but equally satisfying choice.</p>
+                    <div class="menu-card-price">RM 11.90</div>
+                    <button type="button" class="add-to-order-btn" onclick="addToCart('Nasi Dalcha Ayam', 11.90)">Add to Order</button>
+                </div>
+            </div>
+
+            <div class="menu-card reveal">
+                <img class="menu-card-photo" src="" alt="Nasi Dalcha Daging">
+                <div class="menu-card-body">
+                    <div class="menu-card-tag">Special</div>
+                    <h3>Nasi Dalcha Daging</h3>
+                    <p>Premium beef cuts braised low and slow until fork-tender, bathed in our aromatic golden dalcha sauce.</p>
+                    <div class="menu-card-price">RM 15.90</div>
+                    <button type="button" class="add-to-order-btn" onclick="addToCart('Nasi Dalcha Daging', 15.90)">Add to Order</button>
+                </div>
+            </div>
+
+            <div class="menu-card reveal">
+                <img class="menu-card-photo" src="" alt="Acar Rampah">
+                <div class="menu-card-body">
+                    <div class="menu-card-tag">Side</div>
+                    <h3>Acar Rampah</h3>
+                    <p>House-pickled vegetables spiced with turmeric and mustard seeds — the perfect tangy counterpoint to the rich dalcha.</p>
+                    <div class="menu-card-price">RM 3.50</div>
+                    <button type="button" class="add-to-order-btn" onclick="addToCart('Acar Rampah', 3.50)">Add to Order</button>
+                </div>
+            </div>
+
+            <div class="menu-card reveal">
+                <img class="menu-card-photo" src="" alt="Telur Goreng Berempah">
+                <div class="menu-card-body">
+                    <div class="menu-card-tag">Add-on</div>
+                    <h3>Telur Goreng Berempah</h3>
+                    <p>Crispy fried egg coated in a fragrant spice crust — a classic Pak Din add-on loved by regulars.</p>
+                    <div class="menu-card-price">RM 2.00</div>
+                    <button type="button" class="add-to-order-btn" onclick="addToCart('Telur Goreng Berempah', 2.00)">Add to Order</button>
+                </div>
+            </div>
+
+            <div class="menu-card reveal">
+                <img class="menu-card-photo" src="" alt="Teh Tarik Pak Din">
+                <div class="menu-card-body">
+                    <div class="menu-card-tag">Drink</div>
+                    <h3>Teh Tarik Pak Din</h3>
+                    <p>Our frothy pulled milk tea — brewed strong, sweetened just right, and pulled to a perfect silky finish.</p>
+                    <div class="menu-card-price">RM 3.00</div>
+                    <button type="button" class="add-to-order-btn" onclick="addToCart('Teh Tarik Pak Din', 3.00)">Add to Order</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="cart-fab" onclick="openCart()">
+    🛒
+    <span class="cart-fab-count" id="cartCount">0</span>
+</div>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<div class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Your order">
+    <h3>
+        Your Order
+        <button type="button" class="cart-close" onclick="closeCart()" aria-label="Close cart">✕</button>
+    </h3>
+    <!-- Scrolling area: dishes + pickup details -->
+    <div class="cart-body">
+        <p id="cartEmpty">Your cart is empty. Add a dish to get started.</p>
+        <div id="cartItems" class="cart-items"></div>
+
+        <form class="cart-details" id="cartDetails" hidden onsubmit="return false">
+            <h4 class="cart-section-title">Pickup details</h4>
+
+            <div class="cart-field-row">
+                <div class="cart-field">
+                    <label for="orderName">Your name</label>
+                    <input id="orderName" type="text" autocomplete="name" placeholder="Ahmad">
+                </div>
+                <div class="cart-field">
+                    <label for="orderPhone">Phone</label>
+                    <input id="orderPhone" type="tel" autocomplete="tel" placeholder="+60 12-xxx xxxx">
+                </div>
+            </div>
+
+            <div class="cart-field">
+                <label for="orderTime">Preferred pickup time <span>(optional)</span></label>
+                <input id="orderTime" type="time">
+            </div>
+
+            <div class="cart-field">
+                <label for="orderNote">Special requests <span>(optional)</span></label>
+                <textarea id="orderNote" rows="2" placeholder="e.g. less spicy, extra gravy"></textarea>
+            </div>
+        </form>
+    </div>
+
+    <!-- Pinned at the bottom: totals + actions -->
+    <div class="cart-summary">
+        <div class="cart-summary-row">
+            <span>Food Subtotal</span>
+            <span id="cartSubtotal">RM 0.00</span>
+        </div>
+        <div class="cart-summary-row">
+            <span>Booking Fee</span>
+            <span id="cartFee">RM 0.00</span>
+        </div>
+        <div class="cart-summary-row total">
+            <span>Total</span>
+            <span id="cartTotal">RM 0.00</span>
+        </div>
+
+        <p class="cart-hint" id="cartHint" role="alert"></p>
+        <button type="button" class="cart-btn cart-btn-whatsapp" onclick="sendOrderWhatsApp()">
+            Send Order to Pak Din (WhatsApp)
+        </button>
+        <button type="button" class="cart-btn cart-btn-fee" onclick="payServiceFee()">
+            Pay Booking Fee Online
+        </button>
+        <p class="cart-note">
+            Food payment is made directly to Pak Din upon self-pickup.
+            The booking fee covers use of the online ordering service.
+        </p>
+    </div>
+</div>
+
+<!-- ── SITE BACKGROUND ──────────────
+     Fixed behind the whole page; the overlay darkens it so text stays readable.
+     Change the video filename below to any clip in your background-playlist-video folder. -->
+   <video class="site-bg-video active" autoplay muted loop playsinline preload="auto"
+       aria-hidden="true" tabindex="-1"> 
+    <source src="../background-playlist-video/pakdincateringservices.mp4" type="video/mp4"> 
+</video>
+
+<div class="site-bg-overlay"></div>
+<!-- ── FOOTER (shared — see footer.html) ── -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>Pak Din Nasi Dalcha</h4>
+                <p>A family tradition since 1998 — serving authentic, freshly cooked Nasi Dalcha to the people of Penang and beyond.</p>
+                <div class="footer-halal">
+                    <img src="../image/food-section/logo-section/halal_logo.png"
+                         alt="Halal Certified" class="halal-icon">
+                    Halal Certified
+                </div>
+                <div class="footer-social-wrap">
+                    <span class="footer-social-label">Follow Us</span>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3H13.5V8.5c0-.9.3-1.5 1.6-1.5H16.5V4.3C16 4.2 15 4 14 4c-2.2 0-3.7 1.3-3.7 3.8V10.5H8v3h2.3V21h3.2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h5>Navigate</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="order.html">Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li><a href="tel:+60123456789">+60 12-345 6789</a></li>
+                    <li><a href="mailto:info@pakdinnasi.com">info@pakdinnasi.com</a></li>
+                    <li><a href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Hours</h5>
+                <div class="footer-hours-row">
+                    <span class="day">Mon, Wed – Fri</span>
+                    <span class="time">8AM – 8PM</span>
+                </div>
+                <div class="footer-hours-row">
+                    <span class="day">Saturday</span>
+                    <span class="time">8AM – 8PM</span>
+                </div>
+                <div class="footer-hours-row">
+                    <span class="day">Tuesday</span>
+                    <span class="time">Closed</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pak Din Nasi Dalcha. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts last, once the cart markup and buttons exist.
+     cart.js defines addToCart, openCart, closeCart, sendOrderWhatsApp, payServiceFee. -->
+<script src="../js-section/cart.js"></script>
+<script src="../js-section/main.js"></script>
+</body>
+</html>
