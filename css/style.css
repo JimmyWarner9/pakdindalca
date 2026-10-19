@@ -2330,3 +2330,48 @@ body:has(.contact-section) .contact-section {
         text-align: left;
     }
 }
+
+/* ═══════════════════════════════════════════
+   CLEAN RESTAURANT UI PASS
+   Bootstrap-inspired structure with Pak Din branding.
+═══════════════════════════════════════════ */
+:root { --ui-cream: #fbf8f2; --ui-ink: #17202a; --ui-gold: #bd8730; }
+body { background: var(--ui-cream); color: var(--ui-ink); }
+.navbar { padding: 16px clamp(18px, 5vw, 64px); background: rgba(15,20,28,.94); backdrop-filter: blur(12px); }
+.navbar.scrolled { padding: 12px clamp(18px, 5vw, 64px); background: rgba(255,253,248,.97); }
+.navbar-menu { gap: clamp(16px, 3vw, 34px); }
+.navbar-menu a { font-size: 12px; letter-spacing: 1px; }
+.navbar-logo-text { display: flex; align-items: center; }
+.hero { min-height: 640px; }
+.hero-content { width: min(100% - 36px, 820px); margin: 0 auto; padding-top: 88px; }
+.hero h1 { max-width: 760px; margin: 0 auto 22px; font-size: clamp(48px, 8vw, 92px); line-height: .98; }
+.hero-sub { max-width: 570px; margin: 0 auto 28px; }
+.hero-cta-group { gap: 12px; }
+.btn-primary, .btn-outline { border-radius: 8px; padding: 14px 24px; }
+.section-title { color: var(--ui-ink); }
+.menu-section, .about-section, .contact-section, .newsletter-section { background: var(--ui-cream); }
+.menu-header { max-width: 700px; margin: 0 auto 42px; text-align: center; }
+.menu-grid { gap: 22px; }
+.menu-card { overflow: hidden; border: 1px solid #e8dfd3; border-radius: 14px; background: #fff; box-shadow: 0 8px 24px rgba(30,20,8,.07); transition: transform .2s ease, box-shadow .2s ease; }
+.menu-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(30,20,8,.12); }
+.menu-card-photo { aspect-ratio: 4 / 3; object-fit: cover; background: #eee8df; }
+.menu-card-body { padding: 22px; }
+.menu-card-tag, .availability { font-size: 10px; letter-spacing: 1.4px; font-weight: 700; text-transform: uppercase; }
+.menu-card h3 { color: var(--ui-ink); font-size: 22px; }
+.menu-card p { color: #68717d; font-size: 14px; line-height: 1.65; }
+.menu-card-price { color: var(--ui-gold); font-size: 20px; font-weight: 700; }
+.footer { background-color: #17202a; background-blend-mode: multiply; }
+.footer .container { padding-top: 58px; padding-bottom: 28px; }
+.footer-grid { gap: 42px; }
+.footer-col h5, .footer-brand h4 { color: #fff; }
+.footer-col a, .footer-brand p { color: rgba(255,255,255,.68); }
+.footer-bottom { margin-top: 34px; }
+@media (max-width: 640px) {
+  .hero { min-height: 580px; }
+  .hero-content { padding-top: 60px; }
+  .hero h1 { font-size: clamp(42px, 13vw, 62px); }
+  .hero-cta-group { flex-direction: column; align-items: stretch; width: min(100%, 320px); margin: 0 auto; }
+  .hero-cta-group a { text-align: center; }
+  .menu-card-body { padding: 18px; }
+  .footer-grid { gap: 28px 20px; }
+}
