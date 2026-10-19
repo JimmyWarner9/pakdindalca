@@ -1474,6 +1474,18 @@ video.site-bg-video {
 .home-review-card cite { display: block; color: #68717d; font-size: 13px; margin-top: 20px; font-style: normal; }
 @media (max-width: 760px) { .home-action-grid, .home-section-heading { align-items: flex-start; flex-direction: column; } .home-action-buttons { justify-content: flex-start; } .home-featured-grid, .home-review-grid { grid-template-columns: 1fr; } .home-featured, .home-review-section { padding: 64px 0; } .home-food-card p { min-height: 0; } }
 
+/* Customer review banner */
+.home-review-section { background: linear-gradient(120deg, #18212a 0%, #24313b 58%, #8e6427 150%); position: relative; overflow: hidden; }
+.home-review-section::after { content: '“'; position: absolute; right: 7%; top: -38px; color: rgba(232,185,106,.13); font: 700 260px/1 'Playfair Display', serif; pointer-events: none; }
+.home-review-grid { position: relative; z-index: 1; }
+.home-review-grid .section-label { color: #e8b96a; }
+.home-review-grid .section-title, .home-review-grid .section-lead { color: #fff; }
+.home-review-grid .section-lead { color: rgba(255,255,255,.72); }
+.home-review-card { border: 1px solid rgba(232,185,106,.35); background: rgba(255,255,255,.97); padding: 34px 38px; }
+.home-review-card::before { content: 'CUSTOMER FAVOURITE'; display: inline-block; color: var(--ui-gold); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 14px; }
+.home-review-grid .btn-primary { background: #d09a3f; }
+@media (max-width: 760px) { .home-review-section::after { right: -4%; top: 16%; font-size: 180px; } .home-review-card { padding: 26px; } }
+
 /* ─────────────────────────────────────────
    CONTACT SECTION
 ───────────────────────────────────────── */
