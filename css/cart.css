@@ -116,6 +116,8 @@
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #53d88a; box-shadow: 0 0 0 4px rgba(83,216,138,.12); }
 .order-location-bar .is-closed .status-dot { background: #e79b5b; box-shadow: 0 0 0 4px rgba(231,155,91,.12); }
 .order-location-bar a { color: var(--gold-light, #e8b96a); white-space: nowrap; }
+.pickup-map { max-width: 900px; height: 180px; margin: -18px auto 34px; overflow: hidden; border: 1px solid rgba(232,185,106,.28); border-radius: 12px; box-shadow: 0 14px 32px rgba(0,0,0,.2); }
+.pickup-map iframe { width: 100%; height: 100%; border: 0; filter: saturate(.82) contrast(.95); }
 .availability { display: block; margin-top: 10px; color: rgba(255,255,255,.58); font-size: 11px; }
 .availability i { display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: #53d88a; }
 .card-order-row { display: flex; align-items: center; gap: 10px; }
@@ -135,6 +137,7 @@
 
 @media (max-width: 640px) {
   .order-location-bar { align-items: flex-start; flex-direction: column; margin: -8px 0 28px; }
+  .pickup-map { height: 210px; margin: -12px 0 28px; }
   .card-order-row { align-items: stretch; }
   .card-qty { flex: 0 0 auto; }
   .confirm-card { padding: 24px 20px; }
