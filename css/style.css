@@ -2078,16 +2078,9 @@ video.site-bg-video {
     }
 
 
-
     /* ─────────────────────────────────────
-       MOBILE ABOUT VIDEO
+       MOBILE ABOUT VIDEO + BADGE
     ───────────────────────────────────── */
-
-   @media (max-width: 640px) {
-
-    /* keep your existing mobile CSS */
-
-   @media (max-width: 640px) {
 
     .about-media {
         width: min(88vw, 360px);
@@ -2095,7 +2088,6 @@ video.site-bg-video {
         height: auto;
         margin: 0 auto;
         border-radius: 16px;
-
         box-shadow:
             0 20px 45px rgba(0, 0, 0, 0.30),
             0 6px 20px rgba(197, 146, 60, 0.15);
@@ -2110,60 +2102,27 @@ video.site-bg-video {
         object-fit: cover;
         object-position: center;
     }
-}
-    .about-image-badge {
+
+    .about-image-badge,
+    .about-image-wrap > .about-image-badge {
         width: 85px !important;
         height: 85px !important;
-        min-width: 85px;
-        min-height: 85px;
-        max-width: 85px;
-        max-height: 85px;
-        right: -5px;
-        bottom: -15px;
+        min-width: 85px !important;
+        min-height: 85px !important;
+        max-width: 85px !important;
+        max-height: 85px !important;
+        right: -5px !important;
+        bottom: -25px !important;
     }
 
     .about-image-badge .yr {
-        font-size: 19px;
+        font-size: 19px !important;
     }
 
     .about-image-badge .since {
-        font-size: 9px;
+        font-size: 9px !important;
+        margin-bottom: 4px !important;
     }
-} 
-
-/* Contact page: footer always sits at the bottom of the screen */
-body:has(.contact-section) {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-height: 100dvh;
-}
-
-body:has(.contact-section) .contact-section {
-    flex: 1 0 auto;
-}
-
-/* Contact page: readable text card over the video */
-.contact-grid > div:first-child {
-    background: rgba(253, 251, 247, 0.92);
-    padding: 32px;
-    border-radius: 12px;
-    align-self: start;
-}
-
-.contact-grid > div:first-child .section-title,
-.contact-grid > div:first-child .contact-row-text p,
-.contact-grid > div:first-child .contact-row-text a {
-    text-shadow: none;
-}
-
-.contact-grid > div:first-child .section-title {
-    text-align: left;
-}
-
-.contact-grid > div:first-child .contact-row-text h4 {
-    color: var(--gold);
-    text-shadow: none;
 }
     /* ─────────────────────────────────────
        MOBILE BADGE
@@ -2198,7 +2157,7 @@ body:has(.contact-section) .contact-section {
         font-size: 9px !important;
         margin-bottom: 4px !important;
     }
-}
+
 
 
 /* ─────────────────────────────────────────
@@ -2252,5 +2211,122 @@ body:has(.contact-section) .contact-section {
 
     html {
         scroll-behavior: auto;
+    }
+}
+/* ═══ CONTACT PAGE (all screen sizes) ═══ */
+
+/* Footer always sits at the bottom, no photo strip under it */
+body:has(.contact-section) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+body:has(.contact-section) .contact-section {
+    flex: 1 0 auto;
+}
+
+/* Readable text card over the video */
+.contact-grid > div:first-child {
+    background: rgba(253, 251, 247, 0.92);
+    padding: 32px;
+    border-radius: 12px;
+    align-self: start;
+}
+
+.contact-grid > div:first-child .section-title,
+.contact-grid > div:first-child .contact-row-text p,
+.contact-grid > div:first-child .contact-row-text a {
+    text-shadow: none;
+}
+
+.contact-grid > div:first-child .section-title {
+    text-align: left;
+}
+
+.contact-grid > div:first-child .contact-row-text h4 {
+    color: var(--gold);
+    text-shadow: none;
+}
+
+/* CONTACT PAGE — HARDENED MOBILE LAYOUT */
+@media (max-width: 700px) {
+    .navbar,
+    .navbar.scrolled {
+        padding: 14px 18px;
+    }
+
+    .navbar-menu {
+        display: none !important;
+    }
+
+    .navbar-menu.open {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px 20px;
+    }
+
+    .hamburger {
+        display: flex !important;
+        flex: 0 0 auto;
+    }
+
+    .contact-section {
+        padding: 112px 16px 48px !important;
+    }
+
+    .contact-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .contact-grid > div:first-child,
+    .contact-form {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+    }
+
+    .contact-grid > div:first-child {
+        padding: 24px 20px;
+    }
+
+    .contact-form {
+        padding: 24px 20px;
+        margin: 0;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea,
+    .btn-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-form textarea {
+        min-height: 120px;
+    }
+
+    .footer {
+        margin-top: 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        text-align: left;
     }
 }
