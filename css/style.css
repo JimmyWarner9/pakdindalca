@@ -1743,6 +1743,10 @@ video.site-bg-video {
 .newsletter-form input:focus {
     border-color: var(--gold);
 }
+.newsletter-message { flex-basis: 100%; margin: 0; font-size: 13px; font-weight: 500; }
+.newsletter-message.success { color: #28784d; }
+.newsletter-message.error { color: #a33e32; }
+.newsletter-form button:disabled { opacity: .6; cursor: wait; }
 
 .btn-pill {
     display: inline-flex;

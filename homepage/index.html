@@ -347,20 +347,21 @@
             directly to your inbox.
         </h2>
 
-        <form class="newsletter-form">
+        <form class="newsletter-form" id="newsletterForm">
 
-            <input
+            <input id="newsletterEmail"
                 type="email"
                 placeholder="Your email address"
                 required
             >
 
-            <button
+            <button id="newsletterSubmit"
                 type="submit"
                 class="btn-pill"
             >
                 Subscribe Now
             </button>
+            <p id="newsletterMessage" class="newsletter-message" role="status" aria-live="polite"></p>
 
         </form>
 
@@ -502,4 +503,6 @@
 </body>
 </html>
 <!-- MAIN JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js-section/supabase-config.js"></script>
 <script src="../js-section/main.js"></script>

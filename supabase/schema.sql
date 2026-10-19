@@ -56,11 +56,18 @@ create table if not exists public.testimonials (
   created_at timestamptz not null default now()
 );
 
+create table if not exists public.newsletter_subscribers (
+  id uuid primary key default gen_random_uuid(),
+  email text unique not null,
+  subscribed_at timestamptz not null default now()
+);
+
 alter table public.menu_items enable row level security;
 alter table public.orders enable row level security;
 alter table public.order_items enable row level security;
 alter table public.payments enable row level security;
 alter table public.testimonials enable row level security;
+alter table public.newsletter_subscribers enable row level security;
 
 create policy "public read available menu" on public.menu_items for select using (available = true);
 create policy "authenticated manage menu" on public.menu_items for all to authenticated using (true) with check (true);
@@ -70,3 +77,5 @@ create policy "authenticated read order items" on public.order_items for select 
 create policy "authenticated read payments" on public.payments for select to authenticated using (true);
 create policy "public read approved testimonials" on public.testimonials for select using (approved = true);
 create policy "authenticated manage testimonials" on public.testimonials for all to authenticated using (true) with check (true);
+create policy "public subscribe newsletter" on public.newsletter_subscribers for insert with check (true);
+create policy "authenticated read newsletter" on public.newsletter_subscribers for select to authenticated using (true);

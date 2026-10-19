@@ -13,6 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* Newsletter signup — stores email in Supabase */
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm && window.supabase && window.PAKDIN_SUPABASE_URL) {
+        const newsletterDb = supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY);
+        newsletterForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const email = document.getElementById('newsletterEmail').value.trim().toLowerCase();
+            const button = document.getElementById('newsletterSubmit');
+            const status = document.getElementById('newsletterMessage');
+            button.disabled = true;
+            button.textContent = 'Saving…';
+            const { error } = await newsletterDb.from('newsletter_subscribers').insert({ email });
+            if (error && error.code !== '23505') {
+                status.textContent = 'We could not save your email. Please try again.';
+                status.className = 'newsletter-message error';
+            } else {
+                status.textContent = 'Thank you — you are subscribed to Pak Din news.';
+                status.className = 'newsletter-message success';
+                newsletterForm.reset();
+            }
+            button.disabled = false;
+            button.textContent = 'Subscribe Now';
+        });
+    }
+
     /* ── Hamburger menu toggle ─────────────── */
     const hamburger = document.getElementById('hamburger');
     const navMenu   = document.getElementById('navMenu');
