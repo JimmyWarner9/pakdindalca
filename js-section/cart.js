@@ -6,6 +6,7 @@ const WHATSAPP_NUMBER = '60164594948'; // country code + number, digits only
 const BOOKING_FEE = 1.00;              // RM, charged once per order (placeholder — set your real fee)
 const PAYMENT_URL = '';                // payment link for the booking fee; leave '' until you have one
 const CART_STORAGE_KEY = 'pakdin-cart';
+const HISTORY_STORAGE_KEY = 'pakdin-order-history';
 
 
 // ── HELPERS ─────────────────────────────────────────────
@@ -52,6 +53,55 @@ function formatTime(value) {
 function showHint(text) {
     const el = document.getElementById('cartHint');
     if (el) el.textContent = text;
+}
+
+function changeCardQty(button, delta) {
+    const value = button.parentElement.querySelector('b');
+    value.textContent = Math.max(1, Number(value.textContent) + delta);
+}
+
+function addCardToCart(button, name, price) {
+    const qty = Number(button.parentElement.querySelector('.card-qty b').textContent) || 1;
+    for (let i = 0; i < qty; i += 1) addToCart(name, price);
+    button.parentElement.querySelector('.card-qty b').textContent = '1';
+}
+
+function updateOpeningStatus() {
+    const el = document.getElementById('openStatus');
+    if (!el) return;
+    const day = new Date().getDay();
+    const hour = new Date().getHours();
+    const open = day !== 0 && hour >= 8 && hour < 20;
+    el.textContent = open ? 'Open now for pickup' : 'Currently closed — order ahead on WhatsApp';
+    el.parentElement.classList.toggle('is-closed', !open);
+}
+
+function showConfirmation() {
+    if (!cart.length) return;
+    const summary = document.getElementById('confirmSummary');
+    if (summary) summary.innerHTML = cart.map(function (i) {
+        return '<div class="confirm-row"><span>' + i.qty + ' × ' + i.name + '</span><strong>' + formatRM(i.cents * i.qty) + '</strong></div>';
+    }).join('') + '<div class="confirm-row confirm-total"><span>Total with booking fee</span><strong>' + document.getElementById('cartTotal').textContent + '</strong></div>';
+    document.getElementById('confirmOverlay').hidden = false;
+}
+
+function closeConfirmation() {
+    const overlay = document.getElementById('confirmOverlay');
+    if (overlay) overlay.hidden = true;
+}
+
+function confirmAndSend() {
+    saveOrderHistory();
+    closeConfirmation();
+    openWhatsAppOrder();
+}
+
+function saveOrderHistory() {
+    try {
+        const history = JSON.parse(localStorage.getItem(HISTORY_STORAGE_KEY) || '[]');
+        history.unshift({ date: new Date().toISOString(), items: cart.map(function (i) { return { name: i.name, qty: i.qty, cents: i.cents }; }) });
+        localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(history.slice(0, 5)));
+    } catch (e) { /* ignore storage errors */ }
 }
 
 
@@ -109,7 +159,11 @@ function sendOrderWhatsApp() {
         return;
     }
     showHint('');
+    showConfirmation();
+}
 
+function openWhatsAppOrder() {
+    const name = fieldValue('orderName');
     const phone = fieldValue('orderPhone');
     const time = fieldValue('orderTime');
     const note = fieldValue('orderNote');
@@ -255,4 +309,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     renderCart();
+    updateOpeningStatus();
 });
