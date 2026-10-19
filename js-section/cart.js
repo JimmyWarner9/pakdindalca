@@ -2,7 +2,7 @@
 // Works with the markup in order.html and the styles in cart.css.
 
 // ── SETTINGS — change these ─────────────────────────────
-const WHATSAPP_NUMBER = '60123456789'; // country code + number, digits only (placeholder)
+const WHATSAPP_NUMBER = '60164594948'; // country code + number, digits only
 const BOOKING_FEE = 1.00;              // RM, charged once per order (placeholder — set your real fee)
 const PAYMENT_URL = '';                // payment link for the booking fee; leave '' until you have one
 const CART_STORAGE_KEY = 'pakdin-cart';
