@@ -1486,6 +1486,9 @@ video.site-bg-video {
 .home-review-grid .btn-primary { background: #d09a3f; }
 @media (max-width: 760px) { .home-review-section::after { right: -4%; top: 16%; font-size: 180px; } .home-review-card { padding: 26px; } }
 
+/* Let the menu page background video remain visible behind the cards. */
+body:has(.menu-section) .menu-section { background: rgba(251, 248, 242, 0.88); }
+
 /* ─────────────────────────────────────────
    CONTACT SECTION
 ───────────────────────────────────────── */
