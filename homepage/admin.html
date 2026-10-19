@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Pak Din Nasi Dalcha</title>
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="admin-head"><div><span>PAK DIN NASI DALCHA</span><h1>Menu control</h1></div><a href="order.html">View site ↗</a></header>
+    <section class="admin-note"><strong>Phone-friendly admin panel</strong><p>Add dishes, update prices and mark items sold out. Changes are saved on this device for now.</p></section>
+    <form id="menuForm" class="admin-card">
+      <input type="hidden" id="itemId"><label>Dish name<input id="itemName" required placeholder="Nasi Dalcha Kambing"></label>
+      <div class="two-col"><label>Price (RM)<input id="itemPrice" required type="number" min="0" step="0.10" placeholder="14.90"></label><label>Photo URL<input id="itemPhoto" type="url" placeholder="https://..."></label></div>
+      <label>Description<textarea id="itemDescription" rows="3" placeholder="Short dish description"></textarea></label>
+      <div class="form-actions"><button class="primary" type="submit">Save dish</button><button id="cancelEdit" class="secondary" type="button" hidden>Cancel edit</button></div>
+    </form>
+    <section class="admin-card"><div class="section-head"><h2>Menu items</h2><span id="itemCount"></span></div><div id="menuList" class="menu-list"></div></section>
+  </main>
+  <script src="../js-section/admin.js"></script>
+</body>
+</html>
