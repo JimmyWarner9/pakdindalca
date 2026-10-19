@@ -2393,6 +2393,8 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .navbar.scrolled { padding: 12px clamp(18px, 5vw, 64px); background: rgba(255,253,248,.97); }
 .navbar-menu { gap: clamp(16px, 3vw, 34px); }
 .navbar-menu a { font-size: 12px; letter-spacing: 1px; }
+.language-switcher { margin-left: 12px; border: 1px solid rgba(232,185,106,.55); border-radius: 6px; padding: 7px 8px; background: rgba(15,20,28,.8); color: #fff; font: 600 11px 'Poppins',sans-serif; cursor: pointer; }
+.navbar.scrolled .language-switcher { background: #fffdf8; color: var(--ui-ink); }
 .navbar-logo-text { display: flex; align-items: center; }
 .hero { min-height: 640px; }
 .hero-content { width: min(100% - 36px, 820px); margin: 0 auto; padding-top: 88px; }
@@ -2429,4 +2431,5 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
   .hero-cta-group a { text-align: center; }
   .menu-card-body { padding: 18px; }
   .footer-grid { gap: 28px 20px; }
+  .language-switcher { margin-left: auto; margin-right: 8px; }
 }

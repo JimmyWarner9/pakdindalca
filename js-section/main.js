@@ -5,6 +5,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* ── Three-language switcher: English / Bahasa Melayu / Tamil ── */
+    const translations = {
+        en: { HOME:'Home', ABOUT:'About', 'ABOUT US':'About Us', MENU:'Menu', CATERING:'Catering', CONTACT:'Contact', ORDER:'Order', 'VIEW OUR MENU':'View Our Menu', 'ORDER PICKUP':'Order Pickup', 'CATERING ENQUIRY':'Catering Enquiry', 'OUR SIGNATURE DISHES':'Our Signature Dishes', 'WHAT WE SERVE':'What We Serve', 'SEND US A MESSAGE':'Send Us a Message', 'ADD TO ORDER':'Add to Order', 'SUBSCRIBE NOW':'Subscribe Now' },
+        bm: { HOME:'Laman Utama', ABOUT:'Tentang', 'ABOUT US':'Tentang Kami', MENU:'Menu', CATERING:'Katering', CONTACT:'Hubungi', ORDER:'Pesanan', 'VIEW OUR MENU':'Lihat Menu', 'ORDER PICKUP':'Pesanan Ambil Sendiri', 'CATERING ENQUIRY':'Pertanyaan Katering', 'OUR SIGNATURE DISHES':'Hidangan Istimewa Kami', 'WHAT WE SERVE':'Apa Yang Kami Hidangkan', 'SEND US A MESSAGE':'Hantar Mesej', 'ADD TO ORDER':'Tambah Pesanan', 'SUBSCRIBE NOW':'Langgan Sekarang' },
+        ta: { HOME:'முகப்பு', ABOUT:'எங்களைப் பற்றி', 'ABOUT US':'எங்களைப் பற்றி', MENU:'மெனு', CATERING:'கேட்டரிங்', CONTACT:'தொடர்பு', ORDER:'ஆர்டர்', 'VIEW OUR MENU':'மெனுவைப் பார்க்க', 'ORDER PICKUP':'சுயமாக எடுத்துச் செல்ல ஆர்டர்', 'CATERING ENQUIRY':'கேட்டரிங் விசாரணை', 'OUR SIGNATURE DISHES':'எங்கள் சிறப்பு உணவுகள்', 'WHAT WE SERVE':'நாங்கள் வழங்குவது', 'SEND US A MESSAGE':'செய்தி அனுப்பவும்', 'ADD TO ORDER':'ஆர்டரில் சேர்க்கவும்', 'SUBSCRIBE NOW':'இப்போது சந்தா பெறவும்' }
+    };
+    const nav = document.querySelector('.navbar');
+    if (nav && !document.getElementById('languageSwitcher')) {
+        const select = document.createElement('select'); select.id='languageSwitcher'; select.className='language-switcher'; select.setAttribute('aria-label','Language');
+        select.innerHTML='<option value="en">EN</option><option value="bm">BM</option><option value="ta">தமிழ்</option>';
+        nav.appendChild(select);
+        const applyLanguage = lang => { const map=translations[lang]||translations.en; document.querySelectorAll('a,button,.section-label,.menu-card-tag,.newsletter-heading,.section-title').forEach(el=>{ const key=el.textContent.trim().replace(/\s+/g,' ').toUpperCase(); if(map[key]) el.textContent=map[key]; }); select.value=lang; localStorage.setItem('pakdin-language',lang); };
+        select.addEventListener('change',()=>applyLanguage(select.value));
+        applyLanguage(localStorage.getItem('pakdin-language')||'en');
+    }
+
     /* ── Navbar scroll effect ──────────────── */
     const navbar = document.getElementById('navbar');
     if (navbar) {
