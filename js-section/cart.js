@@ -51,6 +51,11 @@ function formatTime(value) {
     return ((h % 12) || 12) + ':' + String(m).padStart(2, '0') + ' ' + suffix;
 }
 
+function orderReference() {
+    const day = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    return 'PD-' + day + '-' + String(Date.now()).slice(-3);
+}
+
 function showHint(text) {
     const el = document.getElementById('cartHint');
     if (el) el.textContent = text;
@@ -80,7 +85,7 @@ function updateOpeningStatus() {
 function showConfirmation() {
     if (!cart.length) return;
     const summary = document.getElementById('confirmSummary');
-    if (summary) summary.innerHTML = cart.map(function (i) {
+    if (summary) summary.innerHTML = '<div class="confirm-reference">Order reference: <strong>' + orderReference() + '</strong></div>' + cart.map(function (i) {
         return '<div class="confirm-row"><span>' + i.qty + ' × ' + i.name + '</span><strong>' + formatRM(i.cents * i.qty) + '</strong></div>';
     }).join('') + '<div class="confirm-row confirm-total"><span>Total with booking fee</span><strong>' + document.getElementById('cartTotal').textContent + '</strong></div>';
     document.getElementById('confirmOverlay').hidden = false;
@@ -153,12 +158,18 @@ function sendOrderWhatsApp() {
 
     // Name is required so the order can be prepared and collected
     const name = fieldValue('orderName');
+    const phone = fieldValue('orderPhone');
+    const date = fieldValue('orderDate');
+    const time = fieldValue('orderTime');
     if (!name) {
         showHint('Please enter your name so we can prepare your order.');
         const nameField = document.getElementById('orderName');
         if (nameField) nameField.focus();
         return;
     }
+    if (!phone || !/^[+\d][\d\s-]{7,}$/.test(phone)) { showHint('Please enter a valid phone number.'); return; }
+    if (!date || !time) { showHint('Please choose both a pickup date and time.'); return; }
+    if (new Date(date + 'T00:00:00') < new Date(new Date().toDateString())) { showHint('Pickup date cannot be in the past.'); return; }
     showHint('');
     showConfirmation();
 }
@@ -166,13 +177,14 @@ function sendOrderWhatsApp() {
 function openWhatsAppOrder() {
     const name = fieldValue('orderName');
     const phone = fieldValue('orderPhone');
+    const date = fieldValue('orderDate');
     const time = fieldValue('orderTime');
     const note = fieldValue('orderNote');
 
     const subtotal = cart.reduce(function (sum, i) { return sum + i.cents * i.qty; }, 0);
     const fee = toCents(BOOKING_FEE);
 
-    const lines = ['Hello Pak Din, I would like to place an order for self-pickup:', ''];
+    const lines = ['Order reference: ' + orderReference(), 'Hello Pak Din, I would like to place an order for self-pickup:', ''];
     cart.forEach(function (i) {
         lines.push(i.qty + ' x ' + i.name + ' — ' + formatRM(i.cents * i.qty));
     });
@@ -183,6 +195,7 @@ function openWhatsAppOrder() {
     lines.push('Name: ' + name);
     if (phone) lines.push('Phone: ' + phone);
     if (time) lines.push('Pickup time: ' + formatTime(time));
+    if (date) lines.push('Pickup date: ' + date);
     if (note) lines.push('Note: ' + note);
 
     const url = 'https://wa.me/' + WHATSAPP_NUMBER +

@@ -129,6 +129,7 @@
 .confirm-overlay { position: fixed; inset: 0; z-index: 2200; display: grid; place-items: center; padding: 20px; background: rgba(4,7,10,.76); backdrop-filter: blur(8px); }
 .confirm-card { position: relative; width: min(100%, 480px); padding: 30px; border: 1px solid rgba(232,185,106,.38); border-radius: 18px; background: #171d23; color: #fff; box-shadow: 0 24px 70px rgba(0,0,0,.4); }
 .confirm-card h3 { margin: 4px 0 20px; font-family: 'Playfair Display',serif; font-size: 30px; }
+.confirm-reference { margin: -8px 0 12px; color: var(--gold-light,#e8b96a); font-size: 12px; letter-spacing: .4px; }
 .confirm-card .cart-close { position: absolute; top: 16px; right: 16px; }
 .confirm-row { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.09); color: rgba(255,255,255,.75); }
 .confirm-row strong { color: var(--gold-light,#e8b96a); white-space: nowrap; }
