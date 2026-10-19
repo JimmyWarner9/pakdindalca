@@ -548,6 +548,15 @@
   background: rgba(197, 146, 60, 0.14);
   border-color: var(--gold-light, #e8b96a);
 }
+.cart-btn-paid {
+  background: rgba(83, 216, 138, 0.12);
+  color: #8cf0b0;
+  border: 1px solid rgba(83, 216, 138, 0.6);
+}
+.cart-btn-paid:hover:not(:disabled) {
+  background: rgba(83, 216, 138, 0.22);
+  border-color: #8cf0b0;
+}
 
 .cart-note {
   margin: 16px 0 0;

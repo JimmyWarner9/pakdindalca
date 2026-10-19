@@ -198,7 +198,10 @@
             Send Order to Pak Din (WhatsApp)
         </button>
         <button type="button" class="cart-btn cart-btn-fee" onclick="payServiceFee()">
-            Pay Booking Fee Online
+            1. Pay Booking Fee with TNG
+        </button>
+        <button type="button" class="cart-btn cart-btn-paid" id="paymentUnlock" onclick="unlockWhatsAppOrder()" hidden>
+            2. I’ve Paid — Continue to WhatsApp
         </button>
         <p class="cart-note">
             Food payment is made directly to Pak Din upon self-pickup.
@@ -299,7 +302,7 @@
 
 <!-- Scripts last, once the cart markup and buttons exist.
      cart.js defines addToCart, openCart, closeCart, sendOrderWhatsApp, payServiceFee. -->
-<script src="../js-section/cart.js?v=all-features-1"></script>
+<script src="../js-section/cart.js?v=payment-first-1"></script>
 <script src="../js-section/main.js"></script>
 </body>
 </html>

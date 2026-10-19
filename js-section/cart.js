@@ -4,7 +4,7 @@
 // ── SETTINGS — change these ─────────────────────────────
 const WHATSAPP_NUMBER = '60164594948'; // country code + number, digits only
 const BOOKING_FEE = 1.00;              // RM, charged once per order (placeholder — set your real fee)
-const PAYMENT_URL = '';                // payment link for the booking fee; leave '' until you have one
+const PAYMENT_URL = 'https://payment.tngdigital.com.my/sc/bDLokKMXr1';
 const CART_STORAGE_KEY = 'pakdin-cart';
 const HISTORY_STORAGE_KEY = 'pakdin-order-history';
 
@@ -34,6 +34,7 @@ function saveCart() {
 }
 
 let cart = loadCart();
+let paymentUnlocked = false;
 
 function fieldValue(id) {
     const el = document.getElementById(id);
@@ -196,6 +197,19 @@ function payServiceFee() {
         return;
     }
     window.open(PAYMENT_URL, '_blank', 'noopener');
+    paymentUnlocked = false;
+    const unlock = document.getElementById('paymentUnlock');
+    if (unlock) unlock.hidden = false;
+    showHint('After paying the booking fee, tap “I’ve paid — continue to WhatsApp”.');
+}
+
+function unlockWhatsAppOrder() {
+    paymentUnlocked = true;
+    const send = document.querySelector('.cart-btn-whatsapp');
+    const unlock = document.getElementById('paymentUnlock');
+    if (send) send.disabled = false;
+    if (unlock) unlock.hidden = true;
+    showHint('Payment step completed. You can now review and send your order.');
 }
 
 
@@ -269,7 +283,7 @@ function renderCart() {
 
     // Order / pay buttons only work when there is something in the cart
     document.querySelectorAll('.cart-btn').forEach(function (btn) {
-        btn.disabled = itemCount === 0;
+        btn.disabled = itemCount === 0 || (btn.classList.contains('cart-btn-whatsapp') && !paymentUnlocked);
     });
 }
 
