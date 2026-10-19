@@ -2410,6 +2410,7 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .menu-card h3 { color: var(--ui-ink); font-size: 22px; }
 .menu-card p { color: #68717d; font-size: 14px; line-height: 1.65; }
 .menu-card-price { color: var(--ui-gold); font-size: 20px; font-weight: 700; }
+.menu-card-footer { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:18px; }.menu-card-footer strong{color:var(--ui-gold);font-size:18px;margin-right:auto}.menu-card-footer .btn-primary{padding:10px 14px;font-size:11px}.menu-card-footer .availability{color:#3c7b53}.menu-card-footer .availability i{background:#53b978}
 .footer { background-color: #17202a; background-blend-mode: multiply; }
 .footer .container { padding-top: 58px; padding-bottom: 28px; }
 .footer-grid { gap: 42px; }

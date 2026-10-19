@@ -98,8 +98,19 @@ function closeConfirmation() {
 
 function confirmAndSend() {
     saveOrderHistory();
+    saveOrderToSupabase();
     closeConfirmation();
     openWhatsAppOrder();
+}
+
+async function saveOrderToSupabase() {
+    if (!window.supabase || !window.PAKDIN_SUPABASE_URL || !cart.length) return;
+    const db = supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY);
+    const subtotal = cart.reduce((sum, i) => sum + i.cents * i.qty, 0) / 100;
+    const reference = orderReference();
+    const { data, error } = await db.from('orders').insert({ reference, customer_name: fieldValue('orderName'), phone: fieldValue('orderPhone'), pickup_date: fieldValue('orderDate'), pickup_time: fieldValue('orderTime'), subtotal, booking_fee: BOOKING_FEE, total: subtotal + BOOKING_FEE, payment_status: 'pending', order_status: 'new' }).select('id').single();
+    if (error || !data) return;
+    await db.from('order_items').insert(cart.map(i => ({ order_id: data.id, name_snapshot: i.name, price_snapshot: i.cents / 100, quantity: i.qty })));
 }
 
 function saveOrderHistory() {
