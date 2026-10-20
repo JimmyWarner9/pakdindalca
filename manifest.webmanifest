@@ -1,0 +1,18 @@
+{
+  "name": "Pak Din Nasi Dalcha",
+  "short_name": "Pak Din",
+  "description": "Pak Din Nasi Dalcha pickup ordering",
+  "start_url": "/homepage/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#111821",
+  "theme_color": "#111821",
+  "icons": [
+    {
+      "src": "/image/food-section/logo-section/pakdin_dalca_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

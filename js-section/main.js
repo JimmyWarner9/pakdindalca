@@ -5,6 +5,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+
     const menuGrid = document.querySelector('.menu-grid');
     if (menuGrid && window.supabase && window.PAKDIN_SUPABASE_URL) {
         const menuDb = supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY);
