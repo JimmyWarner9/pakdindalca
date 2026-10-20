@@ -590,7 +590,12 @@
 ───────────────────────────────────────── */
 
 @media (max-width: 640px) {
-  .cart-fab { display: none; }
+  .cart-fab {
+    display: flex;
+    right: 14px;
+    bottom: 78px;
+    z-index: 1810;
+  }
   .cart-drawer h3 { padding: 22px 20px 16px; font-size: 24px; }
   .cart-body { padding: 0 20px; }
   .cart-summary { padding: 20px 20px 24px; }
