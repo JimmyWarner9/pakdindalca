@@ -5,6 +5,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const menuGrid = document.querySelector('.menu-grid');
+    if (menuGrid && window.supabase && window.PAKDIN_SUPABASE_URL) {
+        const menuDb = supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY);
+        menuDb.from('menu_items').select('*').eq('available', true).order('created_at').then(({data}) => {
+            if (!data || !data.length) return;
+            menuGrid.innerHTML = data.map(item => `<article class="menu-card reveal"><img class="menu-card-photo" src="${item.photo_url || '../image/food-section/Nasi Dalcha Ayam.webp'}" alt="${item.name}"><div class="menu-card-body"><div class="menu-card-tag">Available</div><h3>${item.name}</h3><p>${item.description || ''}</p><div class="menu-card-footer"><strong>RM ${Number(item.price).toFixed(2)}</strong><span class="availability"><i></i> Available</span><a href="order.html" class="btn-primary">Add to Order</a></div></div></article>`).join('');
+        });
+    }
+
     document.querySelectorAll('img').forEach(img => { if (!img.hasAttribute('loading')) img.loading = 'lazy'; img.classList.add('image-ready'); });
     if (!document.querySelector('.mobile-bottom-nav') && !document.querySelector('.admin-shell')) {
         const nav = document.createElement('nav'); nav.className='mobile-bottom-nav'; nav.setAttribute('aria-label','Mobile navigation'); nav.innerHTML='<a href="index.html">⌂<span>Home</span></a><a href="menu.html">▦<span>Menu</span></a><a class="mobile-order" href="order.html">＋<span>Order</span></a><a href="contact.html">⌖<span>Contact</span></a>'; document.body.appendChild(nav);
