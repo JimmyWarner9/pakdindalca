@@ -171,8 +171,8 @@
 .cart-fab {
   position: fixed;
   right: 24px;
-  right: 180px;
-  bottom: 112px;
+  right: 24px;
+  bottom: 24px;
   width: 60px;
   height: 60px;
   display: flex;
@@ -590,7 +590,7 @@
 ───────────────────────────────────────── */
 
 @media (max-width: 640px) {
-  .cart-fab { right: 84px; bottom: 132px; }
+  .cart-fab { right: 16px; bottom: 16px; }
   .cart-drawer h3 { padding: 22px 20px 16px; font-size: 24px; }
   .cart-body { padding: 0 20px; }
   .cart-summary { padding: 20px 20px 24px; }
