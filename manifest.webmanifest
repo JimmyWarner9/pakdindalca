@@ -9,7 +9,7 @@
   "theme_color": "#1f6b45",
   "icons": [
     {
-      "src": "/image/food-section/logo-section/pakdin_dalca_logo.png",
+      "src": "/image/food-section/logo-section/pakdin_pwa_icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
