@@ -60,6 +60,7 @@ img {
 .menu-card-photo,.about-image-main,.home-food-card img { background: linear-gradient(90deg,#eee7dc 25%,#f8f3eb 50%,#eee7dc 75%); background-size: 200% 100%; }
 .mobile-bottom-nav,.whatsapp-float{display:none}
 .whatsapp-float{display:none !important}
+.pwa-install-banner{position:fixed;left:16px;right:16px;bottom:18px;z-index:2200;display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid rgba(232,185,106,.55);border-radius:16px;background:rgba(17,24,33,.97);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.3);font-family:Poppins,sans-serif}.pwa-install-banner>div{flex:1}.pwa-install-banner strong,.pwa-install-banner span{display:block}.pwa-install-banner strong{font-size:14px;color:#e8b96a}.pwa-install-banner span{margin-top:3px;font-size:11px;color:rgba(255,255,255,.72)}.pwa-install-button{border:0;border-radius:999px;padding:9px 15px;background:#e8b96a;color:#17202a;font-weight:700;white-space:nowrap}.pwa-install-close{border:0;background:transparent;color:rgba(255,255,255,.75);font-size:22px;line-height:1;padding:2px 0 2px 4px}
 
 a {
     text-decoration: none;

@@ -7,6 +7,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js').catch(() => {});
 
+    /* Install prompt for Android Chrome and iPhone Safari */
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile && !isStandalone && !sessionStorage.getItem('pakdin-install-dismissed')) {
+        const banner = document.createElement('aside');
+        banner.className = 'pwa-install-banner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Install Pak Din app');
+        banner.innerHTML = '<div><strong>Install Pak Din app</strong><span>Order pickup faster from your home screen.</span></div><button class="pwa-install-button" type="button">Install</button><button class="pwa-install-close" type="button" aria-label="Dismiss">×</button>';
+        document.body.appendChild(banner);
+        const installButton = banner.querySelector('.pwa-install-button');
+        const closeBanner = () => { sessionStorage.setItem('pakdin-install-dismissed', '1'); banner.remove(); };
+        banner.querySelector('.pwa-install-close').addEventListener('click', closeBanner);
+        let installEvent;
+        window.addEventListener('beforeinstallprompt', event => {
+            event.preventDefault(); installEvent = event;
+        }, { once: true });
+        installButton.addEventListener('click', async () => {
+            if (installEvent) { installEvent.prompt(); await installEvent.userChoice; closeBanner(); }
+            else { installButton.textContent = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'Safari: Share → Add to Home Screen' : 'Use browser menu → Add to Home screen'; }
+        });
+    }
+
     const menuGrid = document.querySelector('.menu-grid');
     if (menuGrid && window.supabase && window.PAKDIN_SUPABASE_URL) {
         const menuDb = supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY);
