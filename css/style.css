@@ -1447,6 +1447,7 @@ video.site-bg-video {
 
 /* Homepage conversion sections */
 .home-action-strip { background: #fff; border-bottom: 1px solid var(--border); padding: 34px 0; }
+.live-radio-section { background: #17202a; color: #fff; padding: 34px 0; }.live-radio-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.live-radio-section h2{font:700 clamp(24px,3vw,34px)/1.15 'Playfair Display',serif;margin-bottom:6px}.live-radio-section p{color:rgba(255,255,255,.68);font-size:14px}.flyfm-player{min-width:280px;min-height:70px;border-radius:12px;background:rgba(255,255,255,.08);padding:8px}.flyfm-player iframe{max-width:100%}@media(max-width:760px){.live-radio-inner{align-items:flex-start;flex-direction:column}.flyfm-player{width:100%;min-width:0}}
 .home-action-grid { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .home-action-grid h2 { font: 700 clamp(24px, 3vw, 34px)/1.15 'Playfair Display', serif; color: var(--ui-ink); margin-bottom: 8px; }
 .home-action-grid p { color: #68717d; font-size: 14px; }
