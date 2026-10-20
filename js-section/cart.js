@@ -3,7 +3,7 @@
 
 // ── SETTINGS — change these ─────────────────────────────
 const WHATSAPP_NUMBER = '60164594948'; // country code + number, digits only
-const BOOKING_FEE = 1.00;              // RM, charged once per order (placeholder — set your real fee)
+const BOOKING_FEE = 3.50;              // RM, charged once per order
 const PAYMENT_URL = 'https://payment.tngdigital.com.my/sc/bDLokKMXr1';
 const CART_STORAGE_KEY = 'pakdin-cart';
 const HISTORY_STORAGE_KEY = 'pakdin-order-history';
