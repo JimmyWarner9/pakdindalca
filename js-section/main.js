@@ -32,6 +32,32 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.assign(translations.zh, {
         'OUR STORY':'我们的故事', 'A RECIPE PASSED DOWN, NEVER COMPROMISED':'传承的食谱，从未改变', 'CUSTOMER FAVOURITE':'顾客最爱', 'MADE FRESH TODAY':'今日新鲜制作', 'VISIT PAK DIN':'访问 Pak Din', 'EST. YEAR':'成立年份', 'YEARS OF LEGACY':'传承多年', 'HALAL CERTIFIED':'清真认证', 'GENERATIONS':'代传承', 'NEWSLETTER':'最新消息', 'NAVIGATE':'导航', 'HOURS':'营业时间', 'PRIVACY POLICY':'隐私政策', 'TERMS':'条款', 'AVAILABLE':'有货', 'AVAILABLE TODAY':'今日供应', 'SEND ORDER TO PAK DIN (WHATSAPP)':'通过 WhatsApp 发送订单', 'PAY BOOKING FEE WITH TNG':'使用 TNG 支付预订费', 'CONFIRM YOUR ORDER':'确认您的订单', 'BACK TO ORDER':'返回订单', 'ALMOST THERE':'即将完成', 'PICKUP ONLY':'仅限自取', 'CASH ONLY':'仅收现金', 'OUTDOOR SEATING':'户外座位'
     });
+    Object.assign(translations.bm, {
+        'SLOW-COOKED WITH HERITAGE SPICES, SERVED FRESH EVERY MORNING — A FAMILY RECIPE THAT HAS FED PENANG FOR OVER TWO DECADES.':'Dimasak perlahan dengan rempah warisan, dihidang segar setiap pagi — resipi keluarga yang telah menyajikan Penang selama lebih dua dekad.',
+        'FLUFFY BASMATI RICE SERVED WITH OUR LEGENDARY MUTTON DALCHA GRAVY, SLOW-COOKED WITH CARDAMOM, CINNAMON AND GHEE.':'Nasi basmati lembut dengan kuah dalcha kambing istimewa, dimasak perlahan bersama buah pelaga, kayu manis dan minyak sapi.',
+        'TENDER FREE-RANGE CHICKEN SIMMERED IN THE SAME HERITAGE DALCHA BASE — A LIGHTER BUT EQUALLY SATISFYING CHOICE.':'Ayam kampung empuk dimasak dalam kuah dalcha warisan yang sama — pilihan lebih ringan tetapi tetap memuaskan.',
+        'FRAGRANT TOMATO RICE SERVED WITH TENDER AYAM ROSE IN A RICH, LIGHTLY SPICED SAUCE.':'Nasi tomato beraroma dengan ayam rose yang empuk dalam kuah kaya berempah ringan.',
+        'A FAMILY TRADITION SINCE 1998 — SERVING AUTHENTIC, FRESHLY COOKED NASI DALCHA TO THE PEOPLE OF PENANG AND BEYOND.':'Tradisi keluarga sejak 1998 — menyajikan Nasi Dalcha asli yang dimasak segar kepada warga Penang dan sekitarnya.',
+        'FIND US AT 613, JALAN JELUTONG, GEORGE TOWN. CASH ONLY · OUTDOOR SEATING.':'Kami di 613, Jalan Jelutong, George Town. Tunai sahaja · Tempat duduk luar.',
+        'EVERY PLATE IS BUILT AROUND THE DALCHA — A RICH, SPICED LENTIL-AND-MEAT GRAVY THAT DEFINES OUR KITCHEN.':'Setiap hidangan berasaskan dalcha — kuah lentil dan daging berempah yang menjadi identiti dapur kami.',
+        'RECEIVE THE LATEST PAK DIN NEWS DIRECTLY TO YOUR INBOX.':'Terima berita terkini Pak Din terus ke peti masuk anda.',
+        'FOOD PAYMENT IS MADE DIRECTLY TO PAK DIN UPON SELF-PICKUP.':'Bayaran makanan dibuat terus kepada Pak Din semasa ambil sendiri.',
+        'THE BOOKING FEE COVERS USE OF THE ONLINE ORDERING SERVICE.':'Yuran tempahan meliputi penggunaan perkhidmatan pesanan dalam talian.',
+        'FOR CATERING BOOKINGS, FEEDBACK, OR GENERAL ENQUIRIES.':'Untuk tempahan katering, maklum balas atau pertanyaan umum.'
+    });
+    Object.assign(translations.zh, {
+        'SLOW-COOKED WITH HERITAGE SPICES, SERVED FRESH EVERY MORNING — A FAMILY RECIPE THAT HAS FED PENANG FOR OVER TWO DECADES.':'采用传统香料慢炖，每天早晨新鲜供应——传承超过二十年的家庭食谱。',
+        'FLUFFY BASMATI RICE SERVED WITH OUR LEGENDARY MUTTON DALCHA GRAVY, SLOW-COOKED WITH CARDAMOM, CINNAMON AND GHEE.':'松软印度香米搭配招牌羊肉 Dalcha 酱汁，以豆蔻、肉桂和酥油慢炖而成。',
+        'TENDER FREE-RANGE CHICKEN SIMMERED IN THE SAME HERITAGE DALCHA BASE — A LIGHTER BUT EQUALLY SATISFYING CHOICE.':'嫩滑走地鸡以传承 Dalcha 酱汁炖煮，清爽又满足。',
+        'FRAGRANT TOMATO RICE SERVED WITH TENDER AYAM ROSE IN A RICH, LIGHTLY SPICED SAUCE.':'香浓番茄饭搭配嫩滑 Ayam Rose 和微辣浓郁酱汁。',
+        'A FAMILY TRADITION SINCE 1998 — SERVING AUTHENTIC, FRESHLY COOKED NASI DALCHA TO THE PEOPLE OF PENANG AND BEYOND.':'自 1998 年以来的家庭传统，为槟城及各地顾客供应正宗新鲜 Nasi Dalcha。',
+        'FIND US AT 613, JALAN JELUTONG, GEORGE TOWN. CASH ONLY · OUTDOOR SEATING.':'地址：613, Jalan Jelutong, George Town。仅收现金 · 提供户外座位。',
+        'EVERY PLATE IS BUILT AROUND THE DALCHA — A RICH, SPICED LENTIL-AND-MEAT GRAVY THAT DEFINES OUR KITCHEN.':'每道菜都以 Dalcha 为核心——浓郁的香料扁豆肉汁，定义了我们的厨房。',
+        'RECEIVE THE LATEST PAK DIN NEWS DIRECTLY TO YOUR INBOX.':'将 Pak Din 的最新消息直接发送到您的邮箱。',
+        'FOOD PAYMENT IS MADE DIRECTLY TO PAK DIN UPON SELF-PICKUP.':'取餐时直接向 Pak Din 支付餐费。',
+        'THE BOOKING FEE COVERS USE OF THE ONLINE ORDERING SERVICE.':'预订费涵盖在线点餐服务。',
+        'FOR CATERING BOOKINGS, FEEDBACK, OR GENERAL ENQUIRIES.':'适用于餐饮预订、反馈或一般咨询。'
+    });
     const nav = document.querySelector('.navbar');
     if (nav && !document.getElementById('languageSwitcher')) {
         const select = document.createElement('select'); select.id='languageSwitcher'; select.className='language-switcher'; select.setAttribute('aria-label','Language');
