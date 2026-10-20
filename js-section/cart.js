@@ -125,11 +125,27 @@ function downloadReceipt() {
     if (!cart.length) return;
     const subtotal = cart.reduce((sum, i) => sum + i.cents * i.qty, 0);
     const reference = orderReference();
-    const lines = ['PAK DIN NASI DALCHA', 'Order summary — ' + reference, '', 'Customer: ' + fieldValue('orderName'), 'Phone: ' + fieldValue('orderPhone'), 'Pickup date: ' + fieldValue('orderDate'), 'Pickup time: ' + formatTime(fieldValue('orderTime')), ''];
-    cart.forEach(i => lines.push(i.qty + ' x ' + i.name + ' — ' + formatRM(i.cents * i.qty)));
-    lines.push('', 'Food subtotal: ' + formatRM(subtotal), 'Booking fee: ' + formatRM(toCents(BOOKING_FEE)), 'Total: ' + formatRM(subtotal + toCents(BOOKING_FEE)), '', 'Payment status: Pending confirmation', 'Pickup only · 613 Jalan Jelutong, Jelutong, Penang');
-    const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
-    const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = reference + '-receipt.txt'; link.click(); URL.revokeObjectURL(link.href);
+    const pdfApi = window.jspdf;
+    if (!pdfApi || !pdfApi.jsPDF) { window.print(); return; }
+    const pdf = new pdfApi.jsPDF();
+    let y = 20;
+    const write = (text, size = 11, gap = 7) => { pdf.setFontSize(size); pdf.text(String(text), 18, y); y += gap; };
+    write('PAK DIN NASI DALCHA', 18, 10);
+    write('Order receipt — ' + reference, 12, 10);
+    pdf.line(18, y, 192, y); y += 9;
+    write('Customer: ' + fieldValue('orderName'));
+    write('Phone: ' + fieldValue('orderPhone'));
+    write('Pickup date: ' + fieldValue('orderDate'));
+    write('Pickup time: ' + formatTime(fieldValue('orderTime')), 11, 10);
+    cart.forEach(i => write(i.qty + ' x ' + i.name + ' — ' + formatRM(i.cents * i.qty)));
+    y += 3;
+    write('Food subtotal: ' + formatRM(subtotal));
+    write('Booking fee: ' + formatRM(toCents(BOOKING_FEE)));
+    write('Total: ' + formatRM(subtotal + toCents(BOOKING_FEE)), 14, 10);
+    write('Payment status: Pending confirmation');
+    const note = pdf.splitTextToSize('Pickup only · 613 Jalan Jelutong, Jelutong, Penang', 174);
+    pdf.text(note, 18, y);
+    pdf.save(reference + '-receipt.pdf');
 }
 
 
