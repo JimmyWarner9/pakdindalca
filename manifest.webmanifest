@@ -5,8 +5,8 @@
   "start_url": "/homepage/index.html",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#111821",
-  "theme_color": "#111821",
+  "background_color": "#1f6b45",
+  "theme_color": "#1f6b45",
   "icons": [
     {
       "src": "/image/food-section/logo-section/pakdin_dalca_logo.png",
