@@ -56,9 +56,8 @@ body {
 img {
     display: block;
     max-width: 100%;
-    background: linear-gradient(90deg,#eee7dc 25%,#f8f3eb 50%,#eee7dc 75%);
-    background-size: 200% 100%;
 }
+.menu-card-photo,.about-image-main,.home-food-card img { background: linear-gradient(90deg,#eee7dc 25%,#f8f3eb 50%,#eee7dc 75%); background-size: 200% 100%; }
 .mobile-bottom-nav,.whatsapp-float{display:none}
 
 a {
