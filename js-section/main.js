@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('img').forEach(img => { if (!img.hasAttribute('loading')) img.loading = 'lazy'; img.classList.add('image-ready'); });
     if (!document.querySelector('.mobile-bottom-nav') && !document.querySelector('.admin-shell')) {
         const nav = document.createElement('nav'); nav.className='mobile-bottom-nav'; nav.setAttribute('aria-label','Mobile navigation'); nav.innerHTML='<a href="index.html">⌂<span>Home</span></a><a href="menu.html">▦<span>Menu</span></a><a class="mobile-order" href="order.html">＋<span>Order</span></a><a href="contact.html">⌖<span>Contact</span></a>'; document.body.appendChild(nav);
-        const button=document.createElement('a'); button.className='whatsapp-float'; button.href='https://wa.me/60164594948'; button.target='_blank'; button.rel='noopener'; button.setAttribute('aria-label','Chat with Pak Din on WhatsApp'); button.innerHTML='◔<span>WhatsApp</span>'; document.body.appendChild(button);
     }
 
     /* ── Three-language switcher: English / Bahasa Melayu / Chinese ── */
