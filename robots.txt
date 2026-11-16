@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /homepage/admin.html
+Sitemap: https://pakdindalca.my/sitemap.xml
