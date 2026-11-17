@@ -2,7 +2,7 @@
 // Works with the markup in order.html and the styles in cart.css.
 
 // ── SETTINGS — change these ─────────────────────────────
-const WHATSAPP_NUMBER = '60164594948'; // country code + number, digits only
+const WHATSAPP_NUMBER = '60125033639'; // country code + number, digits only
 const BOOKING_FEE = 3.50;              // RM, charged once per order
 const PAYMENT_URL = 'https://payment.tngdigital.com.my/sc/bDLokKMXr1';
 const CART_STORAGE_KEY = 'pakdin-cart';
