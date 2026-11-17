@@ -2480,6 +2480,16 @@ body:has(.catering-section) .site-bg-video {
 body:has(.catering-section) .site-bg-overlay {
     background: linear-gradient(180deg, rgba(7,18,24,.18), rgba(7,18,24,.28));
 }
+body:has(.catering-section) .site-bg-video {
+    min-width: 0;
+    min-height: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    object-position: center;
+    animation: none;
+    background: #08151b;
+}
 body:has(.catering-section) .catering-section {
     position: relative;
     isolation: isolate;
