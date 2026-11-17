@@ -2470,3 +2470,31 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .footer-bottom { border-top-color: rgba(232,185,106,.2); padding-top: 24px; }
 .footer-bottom p, .footer-bottom-links a { color: rgba(255,255,255,.5); }
 @media (max-width: 960px) { .navbar { padding: 12px 20px; } .Pakdinlogo-icon { height: 52px; width: 62px; } .navbar-logo-text::after { left: 48px; font-size: 7px; } }
+
+/* Sharper, clearer catering backdrop */
+.catering-page .site-bg-video,
+body:has(.catering-section) .site-bg-video {
+    filter: contrast(1.14) saturate(1.16) brightness(.92);
+    transform: scale(1.015);
+}
+body:has(.catering-section) .site-bg-overlay {
+    background: linear-gradient(180deg, rgba(7,18,24,.18), rgba(7,18,24,.28));
+}
+body:has(.catering-section) .catering-section {
+    position: relative;
+    isolation: isolate;
+}
+body:has(.catering-section) .catering-hero,
+body:has(.catering-section) .catering-services {
+    position: relative;
+    z-index: 1;
+}
+body:has(.catering-section) .catering-hero h2,
+body:has(.catering-section) .catering-hero-lead,
+body:has(.catering-section) .catering-stat-inline,
+body:has(.catering-section) .catering-eyebrow {
+    text-shadow: 0 2px 16px rgba(0,0,0,.62);
+}
+@media (prefers-reduced-motion: reduce) {
+    body:has(.catering-section) .site-bg-video { display: none; }
+}
