@@ -444,7 +444,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(8,12,16,.78), rgba(8,12,16,.34) 52%, rgba(8,12,16,.64)), linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.55));
+    background: linear-gradient(90deg, rgba(8,12,16,.54), rgba(8,12,16,.14) 52%, rgba(8,12,16,.42)), linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.38));
     z-index: 2;
 }
 
@@ -456,6 +456,12 @@ ul {
     margin: 0 auto;
     padding: 0 24px;
     text-align: center;
+    animation: hero-content-rise 1s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes hero-content-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-eyebrow {
@@ -469,6 +475,7 @@ ul {
     padding: 7px 20px;
     border-radius: 999px;
     margin-bottom: 28px;
+    animation: hero-item-in .8s .12s ease both;
 }
 
 .hero h1 {
@@ -479,6 +486,7 @@ ul {
     font-weight: 700;
     margin-bottom: 22px;
     letter-spacing: -1px;
+    animation: hero-item-in .9s .22s ease both;
 }
 
 .hero h1 em {
@@ -493,6 +501,7 @@ ul {
     max-width: 520px;
     margin: 0 auto 44px;
     line-height: 1.85;
+    animation: hero-item-in .9s .34s ease both;
 }
 
 .hero-cta-group {
@@ -500,6 +509,12 @@ ul {
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+    animation: hero-item-in .9s .46s ease both;
+}
+
+@keyframes hero-item-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-cta-group .btn-primary, .hero-cta-group .btn-outline { min-width: 172px; padding: 16px 24px; }
