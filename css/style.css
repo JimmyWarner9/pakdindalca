@@ -1632,6 +1632,27 @@ video.site-bg-video {
 .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
 @media (max-width: 760px) { .back-to-top { right: 16px; bottom: 154px; } .image-lightbox { padding: 10px; } }
 
+/* Premium mobile polish */
+@media (max-width: 640px) {
+    body { background: #f6f0e7; }
+    .menu-grid { gap: 18px; padding: 0 2px; }
+    .menu-card { border: 1px solid rgba(197,146,60,.24); border-radius: 20px; background: rgba(255,253,249,.98); box-shadow: 0 14px 30px rgba(39,28,14,.1); }
+    .menu-card-photo { aspect-ratio: 1.18 / 1; }
+    .menu-card-body { padding: 20px 18px 18px; }
+    .menu-card h3 { font-size: 24px; line-height: 1.15; margin: 8px 0 12px; }
+    .menu-card p { font-size: 14px; line-height: 1.7; }
+    .menu-card-footer { align-items: center; margin-top: 20px; }
+    .menu-card-footer strong { font: 700 21px 'Playfair Display',serif; }
+    .menu-card-footer .btn-primary { border-radius: 10px; padding: 12px 15px; }
+    .mobile-bottom-nav { height: 76px; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: rgba(10,17,24,.97); border-top: 1px solid rgba(232,185,106,.38); box-shadow: 0 -12px 30px rgba(0,0,0,.18); backdrop-filter: blur(14px); }
+    .mobile-bottom-nav a { min-width: 66px; color: rgba(255,255,255,.66); font-size: 21px; font-weight: 500; transition: color .25s ease, transform .25s ease; }
+    .mobile-bottom-nav a span { color: inherit; font-size: 10px; font-weight: 500; letter-spacing: .2px; margin-top: 7px; }
+    .mobile-bottom-nav a:hover, .mobile-bottom-nav a:focus { color: #e8b96a; transform: translateY(-2px); }
+    .mobile-bottom-nav .mobile-order { min-width: 78px; color: #19212a; background: linear-gradient(145deg,#f2c979,#d99d3e); border: 1px solid rgba(255,255,255,.38); border-radius: 17px; padding: 11px 12px 9px; margin-top: -25px; box-shadow: 0 8px 22px rgba(0,0,0,.3); }
+    .mobile-bottom-nav .mobile-order span { color: #19212a; font-weight: 600; }
+    .footer { padding-bottom: 108px; }
+}
+
 /* Let the menu page background video remain visible behind the cards. */
 body:has(.menu-section) .menu-section { background: transparent; }
 body:has(.menu-section) .site-bg-overlay { background: rgba(10, 10, 12, 0.02); }
