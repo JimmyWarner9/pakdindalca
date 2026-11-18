@@ -152,16 +152,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Newsletter signup — stores email in Supabase */
     const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm && window.supabase && window.PAKDIN_SUPABASE_URL) {
-        const newsletterDb = supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY);
+    if (newsletterForm) {
+        const newsletterDb = window.supabase && window.PAKDIN_SUPABASE_URL ? supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY) : null;
         newsletterForm.addEventListener('submit', async (event) => {
             event.preventDefault();
             const email = document.getElementById('newsletterEmail').value.trim().toLowerCase();
             const button = document.getElementById('newsletterSubmit');
             const status = document.getElementById('newsletterMessage');
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) { status.textContent = 'Please enter a valid email address.'; status.className = 'newsletter-message error'; return; }
             button.disabled = true;
             button.textContent = 'Saving…';
-            const { error } = await newsletterDb.from('newsletter_subscribers').insert({ email });
+            let error = null;
+            if (newsletterDb) {
+                ({ error } = await newsletterDb.from('newsletter_subscribers').insert({ email }));
+            } else {
+                try {
+                    const response = await fetch(window.PAKDIN_SUPABASE_URL + '/rest/v1/newsletter_subscribers', { method: 'POST', headers: { apikey: window.PAKDIN_SUPABASE_ANON_KEY, Authorization: 'Bearer ' + window.PAKDIN_SUPABASE_ANON_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify({ email }) });
+                    if (!response.ok) error = { message: 'Subscription request failed.' };
+                } catch (requestError) { error = requestError; }
+            }
             if (error && error.code !== '23505') {
                 status.textContent = 'We could not save your email. Please try again.';
                 status.className = 'newsletter-message error';
