@@ -44,6 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const nav = document.createElement('nav'); nav.className='mobile-bottom-nav'; nav.setAttribute('aria-label','Mobile navigation'); nav.innerHTML='<a href="index.html">⌂<span>Home</span></a><a href="menu.html">▦<span>Menu</span></a><a class="mobile-order" href="order.html">＋<span>Order</span></a><a href="contact.html">⌖<span>Contact</span></a>'; document.body.appendChild(nav);
     }
 
+    /* Premium gallery lightbox and smooth back-to-top control */
+    const galleryImages = document.querySelectorAll('[data-lightbox]');
+    if (galleryImages.length && !document.querySelector('.image-lightbox')) {
+        const lightbox = document.createElement('dialog');
+        lightbox.className = 'image-lightbox';
+        lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close image">×</button><img alt="">';
+        document.body.appendChild(lightbox);
+        const preview = lightbox.querySelector('img');
+        galleryImages.forEach(image => image.addEventListener('click', () => {
+            preview.src = image.currentSrc || image.src;
+            preview.alt = image.alt;
+            lightbox.showModal();
+        }));
+        lightbox.addEventListener('click', event => {
+            if (event.target === lightbox || event.target.closest('.lightbox-close')) lightbox.close();
+        });
+    }
+
+    if (!document.querySelector('.back-to-top')) {
+        const backTop = document.createElement('button');
+        backTop.className = 'back-to-top';
+        backTop.type = 'button';
+        backTop.setAttribute('aria-label', 'Back to top');
+        backTop.innerHTML = '↑';
+        document.body.appendChild(backTop);
+        const updateBackTop = () => backTop.classList.toggle('is-visible', window.scrollY > 520);
+        window.addEventListener('scroll', updateBackTop, { passive: true });
+        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        updateBackTop();
+    }
+
     /* ── Three-language switcher: English / Bahasa Melayu / Chinese ── */
     const translations = {
         en: { HOME:'Home', ABOUT:'About', 'ABOUT US':'About Us', MENU:'Menu', CATERING:'Catering', CONTACT:'Contact', ORDER:'Order', 'VIEW OUR MENU':'View Our Menu', 'ORDER PICKUP':'Order Pickup', 'CATERING ENQUIRY':'Catering Enquiry', 'OUR SIGNATURE DISHES':'Our Signature Dishes', 'WHAT WE SERVE':'What We Serve', 'SEND US A MESSAGE':'Send Us a Message', 'ADD TO ORDER':'Add to Order', 'SUBSCRIBE NOW':'Subscribe Now', 'FOLLOW US':'Follow Us', 'DOWNLOAD ORDER SUMMARY':'Download Order Summary', 'CUSTOMER FAVOURITES':'Customer Favourites', 'SEE FULL MENU ↗':'See full menu ↗', 'FRESH DALCHA, READY FOR PICKUP.':'Fresh dalcha, ready for pickup.', 'READ FULL STORY':'Read full story', 'SHARE YOUR FEEDBACK':'Share your feedback' },

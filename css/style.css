@@ -1556,6 +1556,24 @@ video.site-bg-video {
 .home-review-grid .btn-primary { background: #d09a3f; }
 @media (max-width: 760px) { .home-review-section::after { right: -4%; top: 16%; font-size: 180px; } .home-review-card { padding: 26px; } }
 
+/* Golden Spoon-inspired finishing touches: editorial cards, richer depth and gallery preview. */
+.home-action-strip { background: linear-gradient(135deg, #fffdf8 0%, #f4eadb 100%); }
+.home-action-grid, .home-section-heading { position: relative; }
+.home-action-grid::before { content: ''; position: absolute; left: 0; top: -34px; width: 48px; height: 3px; background: var(--ui-gold); }
+.home-featured { background: linear-gradient(180deg, #f8f0e5 0%, #fffdf9 100%); }
+.home-food-card { border: 1px solid rgba(178,128,48,.22); box-shadow: 0 16px 36px rgba(34,25,13,.08); transition: transform .35s ease, box-shadow .35s ease; }
+.home-food-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(34,25,13,.15); }
+.home-food-card img { transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.home-food-card:hover img { transform: scale(1.045); }
+.catering-gallery img { cursor: zoom-in; }
+.image-lightbox { width: min(92vw, 1100px); max-width: none; padding: 18px; border: 1px solid rgba(232,185,106,.55); border-radius: 20px; background: rgba(10,16,22,.96); box-shadow: 0 25px 80px rgba(0,0,0,.45); }
+.image-lightbox::backdrop { background: rgba(3,8,12,.8); backdrop-filter: blur(5px); }
+.image-lightbox img { display: block; width: 100%; max-height: 80vh; object-fit: contain; border-radius: 12px; }
+.lightbox-close { position: absolute; top: 10px; right: 12px; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; color: #fff; background: rgba(10,16,22,.7); font-size: 28px; cursor: pointer; }
+.back-to-top { position: fixed; right: 26px; bottom: 94px; z-index: 1100; width: 46px; height: 46px; border: 1px solid rgba(232,185,106,.75); border-radius: 50%; color: #111820; background: var(--ui-gold); font-size: 22px; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease, visibility .25s ease; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+@media (max-width: 760px) { .back-to-top { right: 16px; bottom: 154px; } .image-lightbox { padding: 10px; } }
+
 /* Let the menu page background video remain visible behind the cards. */
 body:has(.menu-section) .menu-section { background: transparent; }
 body:has(.menu-section) .site-bg-overlay { background: rgba(10, 10, 12, 0.02); }
