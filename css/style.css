@@ -1556,6 +1556,18 @@ video.site-bg-video {
 .home-review-grid .btn-primary { background: #d09a3f; }
 @media (max-width: 760px) { .home-review-section::after { right: -4%; top: 16%; font-size: 180px; } .home-review-card { padding: 26px; } }
 
+.catering-enquiry-panel { display: grid; grid-template-columns: .75fr 1.25fr; gap: 42px; margin: 72px auto 0; padding: 42px; border: 1px solid rgba(232,185,106,.38); border-radius: 22px; background: rgba(10,18,24,.86); box-shadow: 0 20px 50px rgba(0,0,0,.18); }
+.catering-enquiry-panel h3 { margin: 8px 0 12px; color: #fff; font: 700 clamp(28px,4vw,44px)/1.1 'Playfair Display',serif; }
+.catering-enquiry-panel p { color: rgba(255,255,255,.7); line-height: 1.75; }
+.catering-enquiry-form label { display: grid; gap: 7px; color: #e8b96a; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.catering-enquiry-form input, .catering-enquiry-form select, .catering-enquiry-form textarea { width: 100%; padding: 12px 13px; border: 1px solid rgba(255,255,255,.2); border-radius: 8px; color: #fff; background: rgba(255,255,255,.08); font: 400 14px 'Poppins',sans-serif; }
+.catering-enquiry-form textarea { resize: vertical; margin-top: 16px; }
+.catering-enquiry-form input:focus, .catering-enquiry-form select:focus, .catering-enquiry-form textarea:focus { outline: 2px solid rgba(232,185,106,.6); border-color: #e8b96a; }
+.enquiry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.catering-enquiry-status { min-height: 20px; margin: 12px 0 0; font-size: 13px; }
+.catering-enquiry-form .btn-primary { margin-top: 16px; }
+@media (max-width: 760px) { .catering-enquiry-panel { grid-template-columns: 1fr; padding: 26px 20px; gap: 22px; } .enquiry-grid { grid-template-columns: 1fr; } }
+
 /* Golden Spoon-inspired finishing touches: editorial cards, richer depth and gallery preview. */
 .home-action-strip { background: linear-gradient(135deg, #fffdf8 0%, #f4eadb 100%); }
 .home-action-grid, .home-section-heading { position: relative; }

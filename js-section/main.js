@@ -156,6 +156,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const cateringForm = document.getElementById('cateringEnquiryForm');
+    if (cateringForm) {
+        cateringForm.addEventListener('submit', async event => {
+            event.preventDefault();
+            const formData = new FormData(cateringForm);
+            const details = Object.fromEntries(formData.entries());
+            const status = document.getElementById('cateringEnquiryStatus');
+            const message = [
+                'Catering enquiry — Pak Din Nasi Dalcha',
+                `Name: ${details.name}`,
+                `Phone: ${details.phone}`,
+                `Event: ${details.eventType}`,
+                `Date: ${details.date}`,
+                `Guests: ${details.guests}`,
+                `Venue: ${details.venue}`,
+                `Notes: ${details.notes || 'None'}`
+            ].join('\n');
+            if (window.supabase && window.PAKDIN_SUPABASE_URL) {
+                try {
+                    const db = supabase.createClient(window.PAKDIN_SUPABASE_URL, window.PAKDIN_SUPABASE_ANON_KEY);
+                    await db.from('catering_enquiries').insert({ customer_name: details.name, phone: details.phone, event_type: details.eventType, event_date: details.date, guests: Number(details.guests), venue: details.venue, notes: details.notes || '' });
+                } catch (_) {}
+            }
+            status.textContent = 'Opening WhatsApp with your enquiry…';
+            window.open('https://wa.me/60125033639?text=' + encodeURIComponent(message), '_blank', 'noopener');
+            cateringForm.reset();
+        });
+    }
+
     /* ── Hamburger menu toggle ─────────────── */
     const hamburger = document.getElementById('hamburger');
     const navMenu   = document.getElementById('navMenu');

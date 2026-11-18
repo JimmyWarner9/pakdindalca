@@ -136,6 +136,27 @@
             <figure><img data-lightbox src="../image/food-section/logo-section/catering-event-3.png" alt="Pak Din indoor event catering buffet"><figcaption>Indoor event catering</figcaption></figure>
         </div>
 
+        <div class="catering-enquiry-panel reveal" id="catering-enquiry">
+            <div>
+                <span class="catering-eyebrow">Plan your event</span>
+                <h3>Tell us about your gathering</h3>
+                <p>Share the basics and Pak Din will reply with a catering recommendation and quotation.</p>
+            </div>
+            <form class="catering-enquiry-form" id="cateringEnquiryForm">
+                <div class="enquiry-grid">
+                    <label>Your name<input name="name" type="text" required autocomplete="name"></label>
+                    <label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel"></label>
+                    <label>Event date<input name="date" type="date" required></label>
+                    <label>Guests<input name="guests" type="number" min="1" max="5000" value="50" required></label>
+                    <label>Event type<select name="eventType"><option>Kenduri / Majlis</option><option>Corporate event</option><option>Wedding</option><option>Family gathering</option><option>Other</option></select></label>
+                    <label>Venue / area<input name="venue" type="text" placeholder="George Town, Penang" required></label>
+                </div>
+                <label>Notes<textarea name="notes" rows="3" placeholder="Menu preferences, serving time, or anything else"></textarea></label>
+                <p class="catering-enquiry-status" id="cateringEnquiryStatus" role="status" aria-live="polite"></p>
+                <button class="btn-primary" type="submit">Send Catering Enquiry</button>
+            </form>
+        </div>
+
     </div>
 </section>
 
