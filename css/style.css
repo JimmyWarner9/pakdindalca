@@ -155,6 +155,16 @@ ul {
 .newsletter-message.error { color: #ffb4a8; }
 .newsletter-message.success { color: #8de0a7; }
 
+/* Deep black luxury review background and corrected Google review typography. */
+.home-review-section { background: radial-gradient(circle at 78% 35%, rgba(197,146,60,.16), transparent 30%), linear-gradient(120deg, #05090d 0%, #0b1118 58%, #16130d 100%); }
+.home-review-section .review-intro .section-title, .home-review-section .review-intro .section-lead { color: #fff !important; }
+.home-review-section .review-rating strong { color: #fff !important; }
+.home-review-section .review-rating b { color: #f0b84c !important; }
+.home-review-section .review-card-top { gap: 14px; }
+.home-review-section .review-card-top .google-mark { flex: 0 0 34px; }
+.home-review-section .review-card-top strong { margin: 0; color: #26313b; line-height: 1.2; }
+.home-review-section .review-card-top small { margin-top: 4px; white-space: nowrap; }
+
 /* Final homepage drawer override: keep the Golden Spoon-style motion after responsive rules. */
 .hero-navbar .navbar-menu {
     display: flex;
