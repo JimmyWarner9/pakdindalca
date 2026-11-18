@@ -162,6 +162,12 @@ ul {
 .hero-navbar .navbar-menu.open a,
 .hero-navbar .navbar.scrolled .navbar-menu.open a { color: rgba(255,255,255,.9) !important; }
 
+.hero-contact-bar { position: absolute; top: 0; left: 0; right: 0; z-index: 1003; display: flex; justify-content: center; gap: 34px; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.9); font-size: 13px; letter-spacing: .5px; }
+.hero-navbar { top: 43px; }
+.hero-navbar .hero-nav-action { margin-left: auto; margin-right: 28px; padding: 16px 28px; color: #111820; background: #e8c98e; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-decoration: none; transition: background .25s ease, transform .25s ease; }
+.hero-navbar .hero-nav-action:hover { background: #f2d9a5; transform: translateY(-2px); }
+@media (max-width: 640px) { .hero-contact-bar { display: none; } .hero-navbar { top: 0; } .hero-navbar .hero-nav-action { margin-right: 14px; padding: 12px 14px; font-size: 10px; letter-spacing: 1px; } }
+
 @keyframes bgZoom {
     0% {
         transform: translate(-50%, -50%) scale(1);
