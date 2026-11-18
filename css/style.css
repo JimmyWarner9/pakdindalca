@@ -141,6 +141,27 @@ ul {
     .whatsapp-float span { display: none; }
 }
 
+/* Final homepage drawer override: keep the Golden Spoon-style motion after responsive rules. */
+.hero-navbar .navbar-menu {
+    display: flex;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(105%);
+    background: rgba(8,14,20,.98);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s ease, visibility .45s ease;
+}
+.hero-navbar .navbar-menu.open {
+    display: flex;
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateX(0);
+    background: rgba(8,14,20,.98);
+}
+.hero-navbar .navbar-menu.open a,
+.hero-navbar .navbar.scrolled .navbar-menu.open a { color: rgba(255,255,255,.9) !important; }
+
 @keyframes bgZoom {
     0% {
         transform: translate(-50%, -50%) scale(1);
