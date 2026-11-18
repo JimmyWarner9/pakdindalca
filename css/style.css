@@ -114,6 +114,34 @@ ul {
     box-shadow: none;
 }
 
+/* Shared floating WhatsApp contact button */
+.whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 18px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px;
+    background: #25d366;
+    color: #071b12;
+    font: 600 13px/1 'Poppins', sans-serif;
+    letter-spacing: .04em;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(0,0,0,.28);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.35); }
+.whatsapp-float svg { width: 22px; height: 22px; fill: currentColor; flex: 0 0 auto; }
+@media (max-width: 640px) {
+    .whatsapp-float { right: 16px; bottom: 84px; min-height: 50px; width: 50px; padding: 0; justify-content: center; }
+    .whatsapp-float span { display: none; }
+}
+
 @keyframes bgZoom {
     0% {
         transform: translate(-50%, -50%) scale(1);
