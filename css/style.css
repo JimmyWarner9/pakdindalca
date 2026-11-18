@@ -561,6 +561,18 @@ ul {
 .hero-content.hero-slide-in .hero-cta-group { animation: hero-item-in .9s .36s ease both; }
 
 .hero-cta-group .btn-primary, .hero-cta-group .btn-outline { min-width: 172px; padding: 16px 24px; }
+.hero-arrow { position: absolute; top: 56%; z-index: 4; width: 68px; height: 68px; border: 1px solid rgba(232,185,106,.78); color: #f4d18b; background: rgba(8,14,20,.18); font-size: 0; cursor: pointer; transform: translateY(-50%) rotate(45deg); transition: background .3s ease, color .3s ease, box-shadow .3s ease; }
+.hero-arrow::before { display: block; font: 400 42px/1 'Poppins',sans-serif; transform: rotate(-45deg); }
+.hero-arrow-prev::before { content: '‹'; }
+.hero-arrow-next::before { content: '›'; }
+.hero-arrow:hover { color: #111820; background: #e8b96a; box-shadow: 0 0 0 5px rgba(232,185,106,.12); }
+.hero-arrow-prev { left: 34px; }
+.hero-arrow-next { right: 34px; }
+.hero-arrow { padding-bottom: 8px; }
+.hero-arrow-prev, .hero-arrow-next { text-indent: 0; }
+.hero-arrow-prev { line-height: 1; }
+.hero-arrow-next { line-height: 1; }
+@media (max-width: 640px) { .hero-arrow { width: 48px; height: 48px; } .hero-arrow::before { font-size: 30px; } .hero-arrow-prev { left: 14px; } .hero-arrow-next { right: 14px; } }
 
 .hero-scroll-hint {
     position: absolute;

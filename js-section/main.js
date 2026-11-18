@@ -135,15 +135,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroSlides.length > 1) {
         let heroIndex = 0;
         const heroContent = document.querySelector('.hero-content');
-        window.setInterval(() => {
+        const showHeroSlide = nextIndex => {
             heroSlides[heroIndex].classList.remove('is-active');
-            heroIndex = (heroIndex + 1) % heroSlides.length;
+            heroIndex = (nextIndex + heroSlides.length) % heroSlides.length;
             heroSlides[heroIndex].classList.add('is-active');
             if (heroContent) {
                 heroContent.classList.remove('hero-slide-in');
                 void heroContent.offsetWidth;
                 heroContent.classList.add('hero-slide-in');
             }
+        };
+        document.querySelector('.hero-arrow-prev')?.addEventListener('click', () => showHeroSlide(heroIndex - 1));
+        document.querySelector('.hero-arrow-next')?.addEventListener('click', () => showHeroSlide(heroIndex + 1));
+        window.setInterval(() => {
+            showHeroSlide(heroIndex + 1);
         }, 6500);
     }
 
