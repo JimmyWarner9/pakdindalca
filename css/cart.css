@@ -593,7 +593,7 @@
   .cart-fab {
     display: flex;
     right: 14px;
-    bottom: 78px;
+    bottom: 142px;
     z-index: 1810;
   }
   .cart-drawer h3 { padding: 22px 20px 16px; font-size: 24px; }
