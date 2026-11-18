@@ -208,11 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('open');
+            hamburger.classList.toggle('is-open', navMenu.classList.contains('open'));
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('open') ? 'true' : 'false');
         });
 
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
+                hamburger.classList.remove('is-open');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
     }
