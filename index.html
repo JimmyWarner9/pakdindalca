@@ -4,14 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pak Din Nasi Dalcha</title>
-    <script>
-        // GitHub Pages serves this repository under /pakdindalca/.
-        if (location.hostname.endsWith('github.io')) {
-            location.replace('/pakdindalca/homepage/');
-        }
-    </script>
 </head>
-<body>
-    <p><a href="homepage/">Open Pak Din Nasi Dalcha</a></p>
+<body style="margin:0;background:#0f141c;color:#fff;font-family:Arial,sans-serif">
+    <p style="padding:24px">Loading Pak Din Nasi Dalcha…</p>
+    <script>
+        const siteBase = location.hostname.endsWith('github.io')
+            ? '/pakdindalca/homepage/'
+            : '/homepage/';
+        fetch(siteBase + 'index.html', { cache: 'no-store' })
+            .then(response => response.text())
+            .then(page => {
+                const withBase = page.replace(/<head>/i, `<head><base href="${siteBase}">`);
+                document.open();
+                document.write(withBase);
+                document.close();
+            })
+            .catch(() => {
+                document.body.innerHTML = '<p style="padding:24px">Please refresh the page.</p>';
+            });
+    </script>
 </body>
 </html>
