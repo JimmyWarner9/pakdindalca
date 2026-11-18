@@ -1882,8 +1882,8 @@ body:has(.contact-section) .site-bg-overlay { background: rgba(10, 10, 12, 0.16)
     height: min(360px, 46vw);
     transform: translate(-50%, -42%);
     background: url('../image/food-section/logo-section/pakdin_dalca_logo.png') center / contain no-repeat;
-    opacity: .28;
-    filter: grayscale(.65) sepia(.55) saturate(1.7) brightness(3.05) contrast(1.12);
+    opacity: .22;
+    filter: none;
     pointer-events: none;
     z-index: 0;
     animation: footer-logo-float 8s ease-in-out infinite;
