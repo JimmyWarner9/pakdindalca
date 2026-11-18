@@ -1598,6 +1598,17 @@ video.site-bg-video {
 .catering-enquiry-form .btn-primary { margin-top: 16px; }
 @media (max-width: 760px) { .catering-enquiry-panel { grid-template-columns: 1fr; padding: 26px 20px; gap: 22px; } .enquiry-grid { grid-template-columns: 1fr; } }
 
+/* Homepage navigation: compact hamburger with a smooth luxury slide-out panel. */
+.hero-navbar .navbar-menu { display: none; }
+.hero-navbar .hamburger { display: flex; position: relative; z-index: 1002; width: 54px; height: 54px; padding: 0; border: 1px solid rgba(232,185,106,.72); border-radius: 2px; background: rgba(10,16,22,.28); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.hero-navbar .hamburger span { display: block; width: 25px; height: 2px; background: #fff; transition: transform .3s ease, opacity .3s ease; }
+.hero-navbar .navbar-menu { position: fixed; top: 0; right: 0; width: min(380px, 88vw); height: 100vh; padding: 130px 48px 40px; background: rgba(8,14,20,.97); border-left: 1px solid rgba(232,185,106,.45); box-shadow: -18px 0 50px rgba(0,0,0,.3); transform: translateX(105%); transition: transform .45s cubic-bezier(.2,.8,.2,1); flex-direction: column; align-items: flex-start; gap: 22px; z-index: 1001; }
+.hero-navbar .navbar-menu.open { display: flex; transform: translateX(0); }
+.hero-navbar .navbar-menu a, .hero-navbar .navbar.scrolled .navbar-menu a { color: rgba(255,255,255,.9); font-size: 15px; letter-spacing: 2px; padding: 8px 0; }
+.hero-navbar .navbar-menu a:hover, .hero-navbar .navbar-menu a.active { color: var(--gold-light); }
+.hero-navbar .hamburger:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+@media (max-width: 760px) { .hero-navbar .hamburger { width: 48px; height: 48px; } .hero-navbar .navbar-menu { padding: 110px 32px 32px; } }
+
 /* Golden Spoon-inspired finishing touches: editorial cards, richer depth and gallery preview. */
 .home-action-strip { background: linear-gradient(135deg, #fffdf8 0%, #f4eadb 100%); }
 .home-action-grid, .home-section-heading { position: relative; }
