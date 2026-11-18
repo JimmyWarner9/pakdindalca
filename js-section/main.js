@@ -145,8 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 heroContent.classList.add('hero-slide-in');
             }
         };
-        document.querySelector('.hero-arrow-prev')?.addEventListener('click', () => showHeroSlide(heroIndex - 1));
-        document.querySelector('.hero-arrow-next')?.addEventListener('click', () => showHeroSlide(heroIndex + 1));
         window.setInterval(() => {
             showHeroSlide(heroIndex + 1);
         }, 6500);
