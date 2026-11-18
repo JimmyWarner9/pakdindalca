@@ -1639,6 +1639,17 @@ video.site-bg-video {
 .home-review-card { border: 1px solid rgba(232,185,106,.35); background: rgba(255,255,255,.97); padding: 34px 38px; }
 .home-review-card::before { content: 'CUSTOMER FAVOURITE'; display: inline-block; color: var(--ui-gold); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 14px; }
 .home-review-grid .btn-primary { background: #d09a3f; }
+.review-intro .section-title { text-align: left; }
+.review-rating { display: flex; align-items: center; gap: 14px; margin: 22px 0 26px; }
+.review-rating strong { color: #fff; font: 700 42px/1 'Playfair Display',serif; }
+.review-rating span { display: grid; gap: 3px; }
+.review-rating b { color: #f0b84c; letter-spacing: 3px; font-size: 16px; }
+.review-rating small { color: rgba(255,255,255,.65); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.review-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.review-card-top strong, .review-card-top small { display: block; }
+.review-card-top strong { color: #26313b; font-size: 14px; }
+.review-card-top small { color: #7a8490; font-size: 11px; margin-top: 3px; }
+.google-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #4285f4; color: #fff; font: 700 19px Arial,sans-serif; }
 @media (max-width: 760px) { .home-review-section::after { right: -4%; top: 16%; font-size: 180px; } .home-review-card { padding: 26px; } }
 
 .catering-enquiry-panel { display: grid; grid-template-columns: .75fr 1.25fr; gap: 42px; margin: 72px auto 0; padding: 42px; border: 1px solid rgba(232,185,106,.38); border-radius: 22px; background: rgba(10,18,24,.86); box-shadow: 0 20px 50px rgba(0,0,0,.18); }
