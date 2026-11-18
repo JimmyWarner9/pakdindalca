@@ -517,6 +517,11 @@ ul {
     to { opacity: 1; transform: translateY(0); }
 }
 
+.hero-content.hero-slide-in .hero-eyebrow { animation: hero-item-in .8s .05s ease both; }
+.hero-content.hero-slide-in h1 { animation: hero-item-in .9s .14s ease both; }
+.hero-content.hero-slide-in .hero-sub { animation: hero-item-in .9s .25s ease both; }
+.hero-content.hero-slide-in .hero-cta-group { animation: hero-item-in .9s .36s ease both; }
+
 .hero-cta-group .btn-primary, .hero-cta-group .btn-outline { min-width: 172px; padding: 16px 24px; }
 
 .hero-scroll-hint {

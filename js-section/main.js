@@ -134,10 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSlides = document.querySelectorAll('.hero-bg-img');
     if (heroSlides.length > 1) {
         let heroIndex = 0;
+        const heroContent = document.querySelector('.hero-content');
         window.setInterval(() => {
             heroSlides[heroIndex].classList.remove('is-active');
             heroIndex = (heroIndex + 1) % heroSlides.length;
             heroSlides[heroIndex].classList.add('is-active');
+            if (heroContent) {
+                heroContent.classList.remove('hero-slide-in');
+                void heroContent.offsetWidth;
+                heroContent.classList.add('hero-slide-in');
+            }
         }, 6500);
     }
 
