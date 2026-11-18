@@ -423,6 +423,19 @@ ul {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 1.2s ease, transform 7s ease;
+}
+
+.hero-bg-img.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
 }
 
 .hero-overlay {
@@ -431,14 +444,14 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(18, 10, 7, 0.55);
+    background: linear-gradient(90deg, rgba(8,12,16,.78), rgba(8,12,16,.34) 52%, rgba(8,12,16,.64)), linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.55));
     z-index: 2;
 }
 
 .hero-content {
     position: relative;
     z-index: 3;
-    max-width: 780px;
+    max-width: 920px;
     width: 100%;
     margin: 0 auto;
     padding: 0 24px;
@@ -454,17 +467,17 @@ ul {
     color: var(--gold-light);
     border: 1px solid rgba(232, 185, 106, 0.45);
     padding: 7px 20px;
-    border-radius: 2px;
+    border-radius: 999px;
     margin-bottom: 28px;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 8vw, 94px);
+    font-size: clamp(48px, 7.5vw, 92px);
     color: #fff;
     line-height: 1.08;
     font-weight: 700;
-    margin-bottom: 26px;
+    margin-bottom: 22px;
     letter-spacing: -1px;
 }
 
@@ -488,6 +501,8 @@ ul {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.hero-cta-group .btn-primary, .hero-cta-group .btn-outline { min-width: 172px; padding: 16px 24px; }
 
 .hero-scroll-hint {
     position: absolute;

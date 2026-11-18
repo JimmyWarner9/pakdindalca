@@ -131,6 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const heroSlides = document.querySelectorAll('.hero-bg-img');
+    if (heroSlides.length > 1) {
+        let heroIndex = 0;
+        window.setInterval(() => {
+            heroSlides[heroIndex].classList.remove('is-active');
+            heroIndex = (heroIndex + 1) % heroSlides.length;
+            heroSlides[heroIndex].classList.add('is-active');
+        }, 6500);
+    }
+
     /* Newsletter signup — stores email in Supabase */
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm && window.supabase && window.PAKDIN_SUPABASE_URL) {
