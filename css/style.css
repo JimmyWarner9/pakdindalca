@@ -1846,6 +1846,35 @@ body:has(.catering-section) .catering-section {
   transform: translateY(-2px);
 }
 
+/* Full-width package gallery: three large, readable cards. */
+.package-showcase {
+  display: block !important;
+}
+.package-showcase-copy {
+  margin-bottom: 34px;
+}
+.package-showcase-images {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(280px, 1fr)) !important;
+  gap: 22px !important;
+  width: 100%;
+}
+.package-showcase-images img {
+  width: 100% !important;
+  height: 300px !important;
+  min-height: 300px !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+}
+@media (max-width: 980px) {
+  .package-showcase-images { grid-template-columns: repeat(3, minmax(220px, 1fr)) !important; }
+  .package-showcase-images img { height: 260px !important; min-height: 260px !important; }
+}
+@media (max-width: 640px) {
+  .package-showcase-images { grid-template-columns: 1fr !important; }
+  .package-showcase-images img { height: 300px !important; min-height: 300px !important; }
+}
+
 /* Homepage conversion sections */
 .home-action-strip { background: #fff; border-bottom: 1px solid var(--border); padding: 34px 0; }
 .live-radio-section { background: #17202a; color: #fff; padding: 34px 0; }.live-radio-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.live-radio-section h2{font:700 clamp(24px,3vw,34px)/1.15 'Playfair Display',serif;margin-bottom:6px}.live-radio-section p{color:rgba(255,255,255,.68);font-size:14px}.flyfm-player{min-width:280px;min-height:70px;border-radius:12px;background:rgba(255,255,255,.08);padding:8px}.flyfm-player iframe{max-width:100%}@media(max-width:760px){.live-radio-inner{align-items:flex-start;flex-direction:column}.flyfm-player{width:100%;min-width:0}}
