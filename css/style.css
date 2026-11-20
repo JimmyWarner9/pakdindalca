@@ -1728,6 +1728,9 @@ video.site-bg-video {
   border-radius: 0;
   border: 1px solid rgba(232,185,106,.48);
   box-shadow: 0 12px 28px rgba(0,0,0,.28);
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
 }
 .catering-gallery figure {
   border: 1px solid rgba(232,185,106,.45);
@@ -1736,6 +1739,11 @@ video.site-bg-video {
   background: rgba(9,15,20,.72);
 }
 .catering-gallery figure img { border-radius: 0; }
+.catering-gallery figure img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
 
 @media (max-width: 900px) {
   .service-photo-frame { aspect-ratio: 1 / .82; }
