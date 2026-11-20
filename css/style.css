@@ -3125,6 +3125,7 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .btn-primary, .btn-outline { border-radius: 8px; padding: 14px 24px; }
 .section-title { color: var(--ui-ink); }
 .menu-section, .about-section, .contact-section, .newsletter-section { background: var(--ui-cream); }
+.about-section { background: var(--ui-cream) !important; color: var(--ui-ink); }
 .menu-header { max-width: 700px; margin: 0 auto 42px; text-align: center; }
 .menu-grid { gap: 22px; }
 .menu-card { overflow: hidden; border: 1px solid #e8dfd3; border-radius: 14px; background: #fff; box-shadow: 0 8px 24px rgba(30,20,8,.07); transition: transform .2s ease, box-shadow .2s ease; }
