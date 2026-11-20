@@ -1895,7 +1895,7 @@ body:has(.catering-section) .catering-section {
   width: 100%;
 }
 .package-showcase-images img {
-  width: min(100%, 700px) !important;
+  width: min(100%, 900px) !important;
   height: auto !important;
   min-height: 0 !important;
   justify-self: center;
