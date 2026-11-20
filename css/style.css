@@ -157,7 +157,7 @@ ul {
 
 .package-feature { padding: 82px 0; background: #f2eadf; }
 .package-feature-grid { display: grid; grid-template-columns: minmax(280px, .8fr) 1.2fr; align-items: center; gap: 58px; }
-.package-feature-grid > img { width: 100%; max-height: 560px; object-fit: cover; border-radius: 18px; box-shadow: 0 20px 48px rgba(32,22,10,.18); }
+.package-feature-grid > img { width: 100%; max-height: 560px; object-fit: cover; border: 4px solid #c5923c; border-radius: 22px; padding: 7px; background: #071014; box-shadow: 0 20px 48px rgba(32,22,10,.22), 0 0 0 1px rgba(255,255,255,.22) inset; }
 .package-feature-copy h2 { color: var(--ui-ink); font: 700 clamp(32px,4vw,52px)/1.08 'Playfair Display',serif; margin: 8px 0 18px; }
 .package-feature-copy p, .package-showcase-copy p { color: #68717d; line-height: 1.8; max-width: 520px; }
 .package-feature-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 26px; }
@@ -165,9 +165,9 @@ ul {
 .package-showcase-copy h3 { color: #fff; font: 700 clamp(32px,5vw,58px)/1 'Playfair Display',serif; margin: 8px 0 12px; }
 .package-showcase-copy strong { color: #e8b96a; font: 700 26px 'Playfair Display',serif; }
 .package-showcase-copy p { color: rgba(255,255,255,.75); }
-.package-showcase-images { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.package-showcase-images { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .package-showcase-images img { width: 100%; height: 430px; object-fit: cover; border-radius: 14px; cursor: zoom-in; }
-@media (max-width: 760px) { .package-feature { padding: 58px 0; } .package-feature-grid, .package-showcase { grid-template-columns: 1fr; gap: 26px; } .package-feature-grid > img { max-height: 520px; } .package-showcase { padding: 20px; } .package-showcase-images img { height: 320px; } }
+@media (max-width: 760px) { .package-feature { padding: 58px 0; } .package-feature-grid, .package-showcase { grid-template-columns: 1fr; gap: 26px; } .package-feature-grid > img { max-height: 520px; } .package-showcase { padding: 20px; } .package-showcase-images { grid-template-columns: 1fr 1fr; } .package-showcase-images img { height: 320px; } }
 
 /* Clean header without the horizontal divider. */
 .navbar, .navbar.scrolled, .hero-contact-bar { border-bottom: 0 !important; }
