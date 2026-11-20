@@ -237,7 +237,7 @@ ul {
 }
 .about-text { order: 1; padding: 24px 0; text-align: center; }
 .about-image-wrap { order: 2; }
-.about-text::before { content: '—  ◆◇◆  —'; margin-bottom: 24px; }
+.about-text::before { content: '◆  ◇  ◆'; margin: 0 auto 24px; text-align: center; }
 .about-section .about-kicker { color: #e8b96a; }
 .about-section .about-title {
     max-width: 560px;
@@ -864,12 +864,14 @@ ul {
     padding: 28px 0 24px 42px;
 }
 .about-text::before {
-    content: '—  ◆  —';
+    content: '◆  ◇  ◆';
     display: block;
     margin-bottom: 18px;
     color: var(--gold, #c5923c);
     font-size: 13px;
     letter-spacing: 5px;
+    text-align: center;
+    width: 100%;
 }
 .about-kicker {
     color: var(--gold, #c5923c);
@@ -1308,10 +1310,11 @@ video.site-bg-video {
 }
 
 .about-list li::before {
-    content: '';
+    content: '◆';
     width: 28px;
-    height: 1.5px;
-    background: var(--gold);
+    color: var(--gold);
+    font-size: 10px;
+    text-align: center;
     flex-shrink: 0;
 }
 
