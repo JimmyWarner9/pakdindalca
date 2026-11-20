@@ -1792,10 +1792,10 @@ video.site-bg-video {
 
 /* Keep the catering video visible instead of burying it under a dark wash. */
 body:has(.catering-section) .site-bg-overlay {
-  background: rgba(5, 10, 14, .24) !important;
+  background: rgba(5, 10, 14, .08) !important;
 }
 body:has(.catering-section) .catering-section {
-  background: linear-gradient(180deg, rgba(7,12,17,.55), rgba(7,12,17,.68));
+  background: linear-gradient(180deg, rgba(7,12,17,.12), rgba(7,12,17,.22));
 }
 
 /* Keep the homepage package feature in its original framed treatment. */
