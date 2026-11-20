@@ -192,6 +192,27 @@ ul {
   .hero-navbar .hamburger { display: none; }
 }
 
+/* Mobile header: centered logo with controls kept at the edges. */
+@media (max-width: 960px) {
+  .hero-navbar {
+    position: fixed;
+    justify-content: space-between;
+  }
+  .hero-navbar .navbar-logo-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hero-navbar .hamburger {
+    display: flex;
+    order: 1;
+  }
+  .hero-navbar .language-switcher {
+    order: 2;
+    margin-left: auto;
+  }
+}
+
 /* Newsletter joins the footer palette instead of leaving a white gap. */
 .newsletter-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #061c18 0%, #0b2025 58%, #18212a 100%); border-top: 1px solid rgba(232,185,106,.3); border-bottom: 1px solid rgba(232,185,106,.18); padding: 92px 0 86px; }
 .newsletter-section::after { content: '✦'; position: absolute; right: 9%; top: 12%; color: rgba(232,185,106,.1); font-size: 180px; pointer-events: none; }
