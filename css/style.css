@@ -3133,8 +3133,8 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .navbar-logo-text { position: relative; min-width: 76px; }
 .navbar-logo-text::after { content: 'EST. 1998'; position: absolute; left: 58px; bottom: -1px; color: var(--gold-light); font: 600 8px/1 'Poppins',sans-serif; letter-spacing: 2px; white-space: nowrap; opacity: .9; }
 .navbar.scrolled .navbar-logo-text::after { color: var(--gold); }
-.Pakdinlogo-icon { height: 64px; width: 72px; object-fit: contain; }
-.navbar.scrolled .Pakdinlogo-icon { height: 48px; width: 58px; }
+.Pakdinlogo-icon { height: 150px; width: 300px; object-fit: contain; }
+.navbar.scrolled .Pakdinlogo-icon { height: 110px; width: 220px; }
 .navbar-menu { gap: clamp(18px, 2.5vw, 36px); }
 .navbar-menu a { font-size: 11px; letter-spacing: 1.8px; padding: 10px 0; }
 .language-switcher { border-color: rgba(232,185,106,.55); border-radius: 999px; padding: 10px 14px; background: rgba(255,255,255,.06); }
