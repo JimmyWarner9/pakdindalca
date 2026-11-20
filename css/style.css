@@ -723,6 +723,22 @@ ul {
 .hero-content.hero-slide-in .hero-cta-group { animation: hero-item-in .9s .36s ease both; }
 
 .hero-cta-group .btn-primary, .hero-cta-group .btn-outline { min-width: 172px; padding: 16px 24px; }
+.hero-cta-group .hero-menu-button {
+    min-width: 220px;
+    padding: 17px 30px;
+    color: #fff8e9;
+    background: rgba(12, 18, 24, .16);
+    border: 1px solid rgba(232, 185, 106, .9);
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(255, 247, 220, .16), 0 10px 26px rgba(0,0,0,.16);
+    letter-spacing: 2.4px;
+}
+.hero-cta-group .hero-menu-button:hover {
+    color: #17202a;
+    background: #e8b96a;
+    border-color: #f3cf82;
+    box-shadow: 0 12px 30px rgba(0,0,0,.24), 0 0 0 5px rgba(232,185,106,.12);
+}
 .hero-arrow { position: absolute; top: 56%; z-index: 4; width: 68px; height: 68px; border: 1px solid rgba(232,185,106,.78); color: #f4d18b; background: rgba(8,14,20,.18); font-size: 0; cursor: pointer; transform: translateY(-50%) rotate(45deg); transition: background .3s ease, color .3s ease, box-shadow .3s ease; }
 .hero-arrow::before { display: block; font: 400 42px/1 'Poppins',sans-serif; transform: rotate(-45deg); }
 .hero-arrow-prev::before { content: '‹'; }
