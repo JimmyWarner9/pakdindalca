@@ -1808,6 +1808,38 @@ body:has(.catering-section) .catering-section {
   box-shadow: 0 20px 48px rgba(32,22,10,.22), 0 0 0 1px rgba(255,255,255,.22) inset;
 }
 
+/* Make the catering PDF action unmistakably clickable. */
+.package-showcase .pdf-package-link,
+.package-showcase .pdf-package-link:visited {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 20px !important;
+  border: 1px solid #e8b96a !important;
+  border-radius: 4px !important;
+  background: linear-gradient(135deg, #e8b96a, #c5923c) !important;
+  color: #171108 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(197,146,60,.2);
+}
+.package-showcase .pdf-package-link span {
+  width: 21px;
+  height: 24px;
+  border: 1px solid currentColor;
+  color: inherit;
+}
+.package-showcase .pdf-package-link:hover {
+  background: #f2ca7d !important;
+  color: #171108 !important;
+  transform: translateY(-2px);
+}
+
 /* Homepage conversion sections */
 .home-action-strip { background: #fff; border-bottom: 1px solid var(--border); padding: 34px 0; }
 .live-radio-section { background: #17202a; color: #fff; padding: 34px 0; }.live-radio-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.live-radio-section h2{font:700 clamp(24px,3vw,34px)/1.15 'Playfair Display',serif;margin-bottom:6px}.live-radio-section p{color:rgba(255,255,255,.68);font-size:14px}.flyfm-player{min-width:280px;min-height:70px;border-radius:12px;background:rgba(255,255,255,.08);padding:8px}.flyfm-player iframe{max-width:100%}@media(max-width:760px){.live-radio-inner{align-items:flex-start;flex-direction:column}.flyfm-player{width:100%;min-width:0}}
