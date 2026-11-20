@@ -3162,7 +3162,8 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .navbar { padding: 14px clamp(20px, 5vw, 72px); background: rgba(12,18,24,.82); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(232,185,106,.18); }
 .navbar.scrolled { padding: 10px clamp(20px, 5vw, 72px); background: rgba(253,251,247,.96); border-bottom-color: rgba(197,146,60,.22); }
 .navbar-logo-text { position: relative; min-width: 76px; }
-.navbar-logo-text::after { content: none; }
+.navbar-logo-text::after,
+.navbar.scrolled .navbar-logo-text::after { content: none !important; display: none !important; }
 .Pakdinlogo-icon { height: 150px; width: 300px; object-fit: contain; }
 .navbar.scrolled .Pakdinlogo-icon { height: 110px; width: 220px; }
 .navbar-menu { gap: clamp(18px, 2.5vw, 36px); }
