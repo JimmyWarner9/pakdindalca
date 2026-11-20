@@ -1760,7 +1760,8 @@ video.site-bg-video {
   box-shadow: 0 12px 28px rgba(0,0,0,.28);
   aspect-ratio: 4 / 5;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  background: #05090d;
 }
 .package-showcase-images img:hover {
   border-color: var(--gold-light, #e8b96a);
@@ -1776,7 +1777,8 @@ video.site-bg-video {
 .catering-gallery figure img {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
+  object-fit: contain;
+  background: #05090d;
 }
 
 @media (max-width: 900px) {
