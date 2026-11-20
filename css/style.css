@@ -1726,11 +1726,15 @@ video.site-bg-video {
 }
 .package-showcase-images img {
   border-radius: 0;
-  border: 1px solid rgba(232,185,106,.48);
+  border: 2px solid rgba(232,185,106,.72);
   box-shadow: 0 12px 28px rgba(0,0,0,.28);
   aspect-ratio: 4 / 5;
   height: auto;
   object-fit: cover;
+}
+.package-showcase-images img:hover {
+  border-color: var(--gold-light, #e8b96a);
+  box-shadow: 0 0 0 3px rgba(232,185,106,.18), 0 16px 34px rgba(0,0,0,.34);
 }
 .catering-gallery figure {
   border: 1px solid rgba(232,185,106,.45);
@@ -1752,6 +1756,14 @@ video.site-bg-video {
   .catering-hero { padding-top: 10px; }
   .catering-services { gap: 58px; padding: 0 8px; }
   .service-photo-frame { aspect-ratio: 1 / 1.02; }
+}
+
+/* Keep the catering video visible instead of burying it under a dark wash. */
+body:has(.catering-section) .site-bg-overlay {
+  background: rgba(5, 10, 14, .24) !important;
+}
+body:has(.catering-section) .catering-section {
+  background: linear-gradient(180deg, rgba(7,12,17,.55), rgba(7,12,17,.68));
 }
 
 /* Homepage conversion sections */
