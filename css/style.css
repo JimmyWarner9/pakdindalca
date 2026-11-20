@@ -1887,6 +1887,25 @@ body:has(.catering-section) .catering-section {
 }
 .package-showcase-copy {
   margin-bottom: 34px;
+  text-align: center;
+}
+.package-showcase-copy .catering-eyebrow,
+.package-showcase-copy p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.package-showcase-copy h3 {
+  font-weight: 700;
+  color: #fff8e9;
+  text-shadow: none;
+  letter-spacing: .2px;
+}
+.package-showcase-copy strong {
+  display: block;
+  font-weight: 700;
+}
+.package-showcase-copy .package-feature-actions {
+  justify-content: center;
 }
 .package-showcase-images {
   display: grid !important;
