@@ -1890,12 +1890,12 @@ body:has(.catering-section) .catering-section {
 }
 .package-showcase-images {
   display: grid !important;
-  grid-template-columns: 1fr !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 22px !important;
   width: 100%;
 }
 .package-showcase-images img {
-  width: min(100%, 560px) !important;
+  width: 100% !important;
   height: auto !important;
   min-height: 0 !important;
   justify-self: center;
@@ -1904,9 +1904,11 @@ body:has(.catering-section) .catering-section {
   background: transparent !important;
 }
 @media (max-width: 980px) {
+  .package-showcase-images { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   .package-showcase-images img { height: auto !important; min-height: 0 !important; }
 }
 @media (max-width: 640px) {
+  .package-showcase-images { grid-template-columns: 1fr !important; }
   .package-showcase-images img { height: auto !important; min-height: 0 !important; }
 }
 
