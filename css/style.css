@@ -141,6 +141,39 @@ ul {
     .whatsapp-float span { display: none; }
 }
 
+/* Keep the premium food-image header visible while scrolling. */
+.navbar,
+.navbar.navbar-solid,
+.navbar.scrolled {
+  position: fixed;
+  top: 0;
+  background-image:
+    linear-gradient(90deg, rgba(7,12,17,.94), rgba(7,12,17,.78)),
+    url('../image/food-section/Nasi_Dalcha_Kambing_wholebowl.jpeg');
+  background-size: cover;
+  background-position: center 42%;
+  border-bottom: 1px solid rgba(232,185,106,.35);
+  box-shadow: 0 8px 28px rgba(0,0,0,.22);
+}
+.navbar.scrolled {
+  background-image:
+    linear-gradient(90deg, rgba(7,12,17,.9), rgba(7,12,17,.7)),
+    url('../image/food-section/Nasi_Dalcha_Kambing_wholebowl.jpeg');
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.navbar.scrolled .navbar-menu a,
+.navbar.scrolled .navbar-logo-text,
+.navbar.scrolled .navbar-logo-text span {
+  color: #fff8e9;
+}
+.navbar.scrolled .navbar-logo-text::after { color: #f2c979; }
+.navbar.scrolled .language-switcher { background: rgba(7,12,17,.48); color: #fff8e9; }
+.navbar.nav-hidden {
+  transform: translateY(-110%);
+  transition: transform .35s ease;
+}
+
 /* Newsletter joins the footer palette instead of leaving a white gap. */
 .newsletter-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #061c18 0%, #0b2025 58%, #18212a 100%); border-top: 1px solid rgba(232,185,106,.3); border-bottom: 1px solid rgba(232,185,106,.18); padding: 92px 0 86px; }
 .newsletter-section::after { content: '✦'; position: absolute; right: 9%; top: 12%; color: rgba(232,185,106,.1); font-size: 180px; pointer-events: none; }

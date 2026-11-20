@@ -126,8 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ── Navbar scroll effect ──────────────── */
     const navbar = document.getElementById('navbar');
     if (navbar) {
+        let previousScrollY = window.scrollY;
         window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 60);
+            const currentScrollY = window.scrollY;
+            navbar.classList.toggle('scrolled', currentScrollY > 60);
+            navbar.classList.toggle('nav-hidden', currentScrollY > 140 && currentScrollY > previousScrollY);
+            if (currentScrollY < 80) navbar.classList.remove('nav-hidden');
+            previousScrollY = currentScrollY;
         });
     }
 
