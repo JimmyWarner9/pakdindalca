@@ -1863,17 +1863,26 @@ body:has(.catering-section) .catering-section {
 }
 .package-showcase-images img {
   width: min(100%, 700px) !important;
-  height: 700px !important;
-  min-height: 700px !important;
+  height: auto !important;
+  min-height: 0 !important;
   justify-self: center;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: contain !important;
+  aspect-ratio: auto !important;
+  object-fit: initial !important;
+  background: transparent !important;
 }
 @media (max-width: 980px) {
-  .package-showcase-images img { height: min(82vw, 600px) !important; min-height: min(82vw, 600px) !important; }
+  .package-showcase-images img { height: auto !important; min-height: 0 !important; }
 }
 @media (max-width: 640px) {
-  .package-showcase-images img { height: 92vw !important; min-height: 0 !important; }
+  .package-showcase-images img { height: auto !important; min-height: 0 !important; }
+}
+
+/* Event gallery follows the homepage reference: natural image ratio, no black bars. */
+.catering-gallery figure img {
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: initial !important;
+  background: transparent !important;
 }
 
 /* Homepage conversion sections */
