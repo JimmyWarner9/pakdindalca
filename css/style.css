@@ -1750,6 +1750,7 @@ video.site-bg-video {
 .service-card h4 { font-size: clamp(22px, 2.2vw, 30px); }
 
 .package-showcase {
+  grid-template-columns: 1fr;
   border-radius: 0;
   border-color: rgba(232,185,106,.6);
   box-shadow: 0 22px 60px rgba(0,0,0,.3);
@@ -1758,7 +1759,9 @@ video.site-bg-video {
   border-radius: 0;
   border: 2px solid rgba(232,185,106,.72);
   box-shadow: 0 12px 28px rgba(0,0,0,.28);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  min-height: 300px;
   height: auto;
   object-fit: contain;
   background: #05090d;
@@ -1788,6 +1791,8 @@ video.site-bg-video {
   .catering-hero { padding-top: 10px; }
   .catering-services { gap: 58px; padding: 0 8px; }
   .service-photo-frame { aspect-ratio: 1 / 1.02; }
+  .package-showcase-images { grid-template-columns: 1fr; }
+  .package-showcase-images img { min-height: 0; aspect-ratio: 1 / 1; }
 }
 
 /* Keep the catering video visible instead of burying it under a dark wash. */
