@@ -363,6 +363,7 @@ ul {
 /* Diagonal light sweep seen on image hover. */
 .menu-card,
 .home-food-card,
+.home-food-card,
 .service-photo-frame,
 .catering-gallery figure {
     position: relative;
@@ -3189,12 +3190,13 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
     transition: transform .55s cubic-bezier(.2,.8,.2,1), box-shadow .55s ease, border-color .55s ease, filter .55s ease;
 }
 .menu-card:hover,
+.home-food-card:hover,
 .service-card:hover .service-photo-frame,
 .catering-gallery figure:hover,
 .package-showcase-images img:hover,
 .package-feature-grid > img:hover,
 .about-media:hover {
-    transform: translateY(-4px) scale(1.018);
+    transform: perspective(900px) rotateY(3deg) translateY(-4px) scale(1.018);
     border-color: #f3cf82;
     box-shadow: 0 18px 42px rgba(20,14,7,.25), 0 0 0 3px rgba(243,207,130,.22), 0 0 26px rgba(232,185,106,.18);
 }
