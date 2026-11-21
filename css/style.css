@@ -790,19 +790,19 @@ ul {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    margin: 0 0;
+    margin: 0 4px 18px;
     border: 4px solid #c5923c;
-    border-radius: 22px;
+    border-radius: 34px;
     background: linear-gradient(135deg, #101d27, #182b31);
-    padding: 28px 0;
+    padding: 46px 0 42px;
     box-shadow: 0 20px 48px rgba(32,22,10,.22), 0 0 0 1px rgba(255,255,255,.22) inset;
 }
 .legacy-strip .container {
     position: relative;
     z-index: 1;
     display: flex;
-    justify-content: center;
-    gap: 64px;
+    justify-content: space-around;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
@@ -859,7 +859,7 @@ ul {
 
 .legacy-stat .num {
     font-family: 'Playfair Display', serif;
-    font-size: 38px;
+    font-size: clamp(42px, 4vw, 56px);
     color: var(--gold);
     font-weight: 700;
     line-height: 1;
@@ -867,7 +867,7 @@ ul {
 }
 
 .legacy-stat .label {
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.75);
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -2137,7 +2137,7 @@ body:has(.catering-section) .catering-section {
 /* Golden Spoon-inspired finishing touches: editorial cards, richer depth and gallery preview. */
 .home-action-strip { background: linear-gradient(135deg, #fffdf8 0%, #f4eadb 100%); }
 .home-action-grid, .home-section-heading { position: relative; }
-.home-action-grid::before { content: ''; position: absolute; left: 0; top: -34px; width: 48px; height: 3px; background: var(--ui-gold); }
+.home-action-grid::before { content: none; display: none; }
 .home-featured { background: linear-gradient(180deg, #f8f0e5 0%, #fffdf9 100%); }
 .home-food-card { border: 1px solid rgba(178,128,48,.22); box-shadow: 0 16px 36px rgba(34,25,13,.08); transition: transform .35s ease, box-shadow .35s ease; }
 .home-food-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(34,25,13,.15); }
