@@ -318,6 +318,11 @@ ul {
 }
 .hero-navbar .navbar-menu.open a,
 .hero-navbar .navbar.scrolled .navbar-menu.open a { color: rgba(255,255,255,.9) !important; }
+.hero-navbar .navbar-menu.open { backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+.hero-navbar .navbar-menu a { position: relative; transition: color .25s ease, transform .25s ease; }
+.hero-navbar .navbar-menu a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--gold-light); transition: right .3s ease; }
+.hero-navbar .navbar-menu a:hover { transform: translateX(6px); }
+.hero-navbar .navbar-menu a:hover::after, .hero-navbar .navbar-menu a.active::after { right: 0; }
 .hero-navbar .navbar-menu.open a { animation: nav-link-enter .55s cubic-bezier(.2,.8,.2,1) both; }
 .hero-navbar .navbar-menu.open li:nth-child(1) a { animation-delay: .08s; }
 .hero-navbar .navbar-menu.open li:nth-child(2) a { animation-delay: .14s; }
