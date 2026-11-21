@@ -42,6 +42,19 @@ body {
     overscroll-behavior-y: none;
 }
 
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    z-index: 2500;
+    pointer-events: none;
+    background: linear-gradient(90deg, #c5923c, #f3cf82, #fff1c9);
+    box-shadow: 0 0 12px rgba(232,185,106,.75);
+    transition: width .08s linear;
+}
+
 body {
     background: transparent;
     font-family: 'Poppins', sans-serif;
