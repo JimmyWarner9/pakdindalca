@@ -3223,6 +3223,15 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 
 /* Contact page: editorial sections over the existing video atmosphere. */
 .contact-page { color: #f7f0e7; }
+body:has(.contact-page) .navbar,
+body:has(.contact-page) .navbar.scrolled {
+  background: rgba(8, 14, 20, .12);
+  background-image: none;
+  box-shadow: none;
+  border-bottom-color: rgba(255,255,255,.12);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
 .contact-hero { min-height: 66vh; display: grid; place-items: center; text-align: center; padding: 150px 0 100px; background: rgba(7, 12, 16, .2); }
 .contact-hero-inner { max-width: 820px; }
 .contact-hero h1, .contact-copy h2, .contact-cta-card h2 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 6vw, 78px); line-height: 1.04; color: #fff9ef; margin: 22px 0; }
