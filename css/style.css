@@ -362,12 +362,14 @@ ul {
 
 /* Diagonal light sweep seen on image hover. */
 .menu-card,
+.home-food-card,
 .service-photo-frame,
 .catering-gallery figure {
     position: relative;
     overflow: hidden;
 }
 .menu-card::after,
+.home-food-card::after,
 .service-photo-frame::after,
 .catering-gallery figure::after {
     content: '';
@@ -382,6 +384,7 @@ ul {
     transition: background-position .85s cubic-bezier(.2,.8,.2,1);
 }
 .menu-card:hover::after,
+.home-food-card:hover::after,
 .service-card:hover .service-photo-frame::after,
 .catering-gallery figure:hover::after {
     background-position: 135% 135%;
