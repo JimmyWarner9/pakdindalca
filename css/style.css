@@ -371,7 +371,6 @@ ul {
 }
 .menu-card::after,
 .home-food-card::after,
-.service-photo-frame::after,
 .catering-gallery figure::after {
     content: '';
     position: absolute;
@@ -386,7 +385,6 @@ ul {
 }
 .menu-card:hover::after,
 .home-food-card:hover::after,
-.service-card:hover .service-photo-frame::after,
 .catering-gallery figure:hover::after {
     background-position: 135% 135%;
 }
@@ -2168,12 +2166,12 @@ body:has(.catering-section) .catering-section {
 .hero-navbar .hamburger { display: flex; position: relative; z-index: 1002; width: 58px; height: 58px; padding: 0; border: 1px solid rgba(232,185,106,.78); border-radius: 50%; background: linear-gradient(145deg, rgba(35,43,51,.9), rgba(8,14,20,.88)); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 8px 22px rgba(0,0,0,.22), inset 0 0 0 4px rgba(232,185,106,.06); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
 .hero-navbar .hamburger:hover { transform: translateY(-2px); border-color: #f2c979; box-shadow: 0 12px 28px rgba(0,0,0,.3), 0 0 0 5px rgba(232,185,106,.09); }
 .hero-navbar .hamburger span { display: block; width: 24px; height: 2px; border-radius: 2px; background: #f8f1e5; transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease, width .25s ease; }
-.hero-navbar .hamburger:not(.is-open) span:nth-child(1) { animation: menu-line-top 1.1s ease-in-out infinite alternate; }
-.hero-navbar .hamburger:not(.is-open) span:nth-child(2) { animation: menu-line-middle 1.1s .12s ease-in-out infinite alternate; }
-.hero-navbar .hamburger:not(.is-open) span:nth-child(3) { animation: menu-line-bottom 1.1s .24s ease-in-out infinite alternate; }
-@keyframes menu-line-top { from { width: 24px; transform: translateX(0); } to { width: 17px; transform: translateX(-3px); } }
-@keyframes menu-line-middle { from { width: 20px; } to { width: 28px; } }
-@keyframes menu-line-bottom { from { width: 24px; transform: translateX(0); } to { width: 17px; transform: translateX(3px); } }
+.hero-navbar .hamburger:not(.is-open) span:nth-child(1) { animation: menu-line-top 2.4s ease-in-out infinite alternate; }
+.hero-navbar .hamburger:not(.is-open) span:nth-child(2) { animation: menu-line-middle 2.4s .16s ease-in-out infinite alternate; }
+.hero-navbar .hamburger:not(.is-open) span:nth-child(3) { animation: menu-line-bottom 2.4s .32s ease-in-out infinite alternate; }
+@keyframes menu-line-top { from { width: 24px; transform: translateX(0); } to { width: 21px; transform: translateX(-1px); } }
+@keyframes menu-line-middle { from { width: 22px; } to { width: 26px; } }
+@keyframes menu-line-bottom { from { width: 24px; transform: translateX(0); } to { width: 21px; transform: translateX(1px); } }
 .hero-navbar .navbar-menu { position: fixed; top: 0; right: 0; width: min(380px, 88vw); height: 100vh; padding: 130px 48px 40px; background: rgba(8,14,20,.97); border-left: 1px solid rgba(232,185,106,.45); box-shadow: -18px 0 50px rgba(0,0,0,.3); transform: translateX(105%); transition: transform .45s cubic-bezier(.2,.8,.2,1); flex-direction: column; align-items: flex-start; gap: 22px; z-index: 1001; }
 .hero-navbar .navbar-menu.open { display: flex; transform: translateX(0); }
 .hero-navbar .navbar-menu a, .hero-navbar .navbar.scrolled .navbar-menu a { color: rgba(255,255,255,.9); font-size: 15px; letter-spacing: 2px; padding: 8px 0; }
@@ -3176,9 +3174,9 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 @media (max-width: 960px) { .menu-grid .menu-card:last-child { grid-column: auto; } }
 
 /* Shared hamburger motion on every page. */
-.hamburger:not(.is-open) span:nth-child(1) { animation: menu-line-top 1.1s ease-in-out infinite alternate; }
-.hamburger:not(.is-open) span:nth-child(2) { animation: menu-line-middle 1.1s .12s ease-in-out infinite alternate; }
-.hamburger:not(.is-open) span:nth-child(3) { animation: menu-line-bottom 1.1s .24s ease-in-out infinite alternate; }
+.hamburger:not(.is-open) span:nth-child(1) { animation: menu-line-top 2.4s ease-in-out infinite alternate; }
+.hamburger:not(.is-open) span:nth-child(2) { animation: menu-line-middle 2.4s .16s ease-in-out infinite alternate; }
+.hamburger:not(.is-open) span:nth-child(3) { animation: menu-line-bottom 2.4s .32s ease-in-out infinite alternate; }
 
 /* Smooth premium image interaction across content sections. */
 .menu-card,
