@@ -338,7 +338,7 @@ ul {
 @media (max-width: 820px) { .hero-contact-left { display: none; } .hero-contact-bar { justify-content: center; } }
 @media (max-width: 640px) { .hero-contact-bar { display: none; } .hero-navbar { top: 0; } .hero-navbar .hero-nav-action { margin-right: 14px; padding: 12px 14px; font-size: 10px; letter-spacing: 1px; } }
 .hero-navbar { min-height: 166px; padding: 18px clamp(28px, 5vw, 72px); background: linear-gradient(180deg, rgba(7,12,17,.94), rgba(7,12,17,.72)); }
-.hero-navbar .Pakdinlogo-icon { height: 158px; }
+.hero-navbar .Pakdinlogo-icon { height: 210px; width: 420px; }
 .hero-navbar .language-switcher { margin-left: 18px; }
 @media (max-width: 760px) { .hero-navbar { min-height: 92px; padding: 10px 20px; } .hero-navbar .Pakdinlogo-icon { height: 92px; } }
 
@@ -3164,8 +3164,8 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .navbar-logo-text { position: relative; min-width: 76px; }
 .navbar-logo-text::after,
 .navbar.scrolled .navbar-logo-text::after { content: none !important; display: none !important; }
-.Pakdinlogo-icon { height: 150px; width: 300px; object-fit: contain; }
-.navbar.scrolled .Pakdinlogo-icon { height: 110px; width: 220px; }
+.Pakdinlogo-icon { height: 210px; width: 420px; object-fit: contain; }
+.navbar.scrolled .Pakdinlogo-icon { height: 150px; width: 300px; }
 .navbar-menu { gap: clamp(18px, 2.5vw, 36px); }
 .navbar-menu a { font-size: 11px; letter-spacing: 1.8px; padding: 10px 0; }
 .language-switcher { border-color: rgba(232,185,106,.55); border-radius: 999px; padding: 10px 14px; background: rgba(255,255,255,.06); }
