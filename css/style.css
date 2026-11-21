@@ -3241,6 +3241,16 @@ body:has(.site-bg-video) .navbar.scrolled {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+body:has(.site-bg-video) .hero-navbar,
+body:has(.site-bg-video) .hero-navbar.scrolled {
+  background-image: linear-gradient(90deg, rgba(8,14,20,.34), rgba(8,14,20,.14)), url('../image/food-section/Nasi_Dalcha_Kambing_wholebowl.jpeg') !important;
+  background-size: cover;
+  background-position: center 45%;
+  background-color: transparent;
+  box-shadow: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
 .contact-hero { min-height: 66vh; display: grid; place-items: center; text-align: center; padding: 250px 0 100px; background: rgba(7, 12, 16, .2); }
 .contact-hero-inner { max-width: 820px; }
 .contact-hero h1, .contact-copy h2, .contact-cta-card h2 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 6vw, 78px); line-height: 1.04; color: #fff9ef; margin: 22px 0; }
