@@ -3266,6 +3266,11 @@ body { background: var(--ui-cream); color: var(--ui-ink); }
 .contact-cta-card .contact-hero-actions { margin-bottom: 0; }
 @media (max-width: 900px) { .contact-detail-grid { grid-template-columns: repeat(2, 1fr); } .contact-form-layout { grid-template-columns: 1fr; gap: 36px; } }
 @media (max-width: 560px) { .contact-hero { min-height: 58vh; padding: 130px 0 70px; } .contact-detail-grid { grid-template-columns: 1fr; } .contact-details-section, .contact-form-section, .contact-map-section, .contact-faq-section { padding: 70px 0; } .contact-form { padding: 24px 18px; } .map-frame { height: 320px; } }
+
+/* Keep the native language menu in the same premium palette when opened. */
+.language-switcher { color-scheme: dark; }
+.language-switcher option { background: #17212a; color: #fff8e9; }
+.language-switcher option:checked { background: #c5923c; color: #10161c; }
 .footer .container { padding-top: 58px; padding-bottom: 28px; }
 .footer-grid { gap: 42px; }
 .footer-col h5, .footer-brand h4 { color: #fff; }
