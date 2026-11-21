@@ -1,0 +1,7 @@
+{
+  "name": "pakdindalca-static-site",
+  "private": true,
+  "scripts": {
+    "build": "node -e \"console.log('Pak Din static site: no build step required')\""
+  }
+}
