@@ -147,18 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const scrollProgress = document.getElementById('scrollProgress');
-    if (scrollProgress) {
-        const updateScrollProgress = () => {
-            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-            scrollProgress.style.width = `${Math.min(100, Math.max(0, progress))}%`;
-        };
-        updateScrollProgress();
-        window.addEventListener('scroll', updateScrollProgress, { passive: true });
-        window.addEventListener('resize', updateScrollProgress);
-    }
-
     const heroSlides = document.querySelectorAll('.hero-bg-img');
     if (heroSlides.length > 1) {
         let heroIndex = 0;
