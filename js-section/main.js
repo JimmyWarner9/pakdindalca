@@ -124,6 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'THE BOOKING FEE COVERS USE OF THE ONLINE ORDERING SERVICE.':'预订费涵盖在线点餐服务。',
         'FOR CATERING BOOKINGS, FEEDBACK, OR GENERAL ENQUIRIES.':'适用于餐饮预订、反馈或一般咨询。'
     });
+    const contactTranslations = {
+        bm: { 'GET IN TOUCH':'HUBUNGI KAMI', 'LET’S PLAN SOMETHING SPECIAL.':'Mari merancang sesuatu yang istimewa.', 'FOR TABLE BOOKINGS, CATERING EVENTS, AND QUESTIONS ABOUT PAK DIN, WE ARE HAPPY TO HELP.':'Untuk tempahan meja, acara katering dan pertanyaan tentang Pak Din, kami sedia membantu.', 'SEND AN ENQUIRY':'Hantar Pertanyaan', 'WHATSAPP US':'Hubungi WhatsApp', 'VISIT US':'Kunjungi Kami', 'CALL OR WHATSAPP':'Telefon atau WhatsApp', 'EMAIL US':'E-mel Kami', 'OPENING HOURS':'Waktu Operasi', 'SEND MESSAGE':'Hantar Mesej', 'TELL US HOW WE CAN HELP.':'Beritahu kami bagaimana kami boleh membantu.', 'FIND US':'Cari Kami', 'COME VISIT PAK DIN.':'Kunjungi Pak Din.', 'FREQUENTLY ASKED QUESTIONS':'Soalan Lazim', 'NEED HELP?':'Perlukan bantuan?', 'WE LOOK FORWARD TO SERVING YOU':'Kami menanti untuk melayani anda', 'RESERVE A TABLE OR PLAN YOUR CATERING.':'Tempah meja atau rancangkan katering anda.', 'BOOK A TABLE':'Tempah Meja', 'PLAN CATERING':'Rancang Katering' },
+        zh: { 'GET IN TOUCH':'联系我们', 'LET’S PLAN SOMETHING SPECIAL.':'让我们计划一场特别的活动。', 'FOR TABLE BOOKINGS, CATERING EVENTS, AND QUESTIONS ABOUT PAK DIN, WE ARE HAPPY TO HELP.':'无论是预订餐桌、餐饮活动还是 Pak Din 的相关问题，我们都很乐意帮助您。', 'SEND AN ENQUIRY':'发送咨询', 'WHATSAPP US':'联系 WhatsApp', 'VISIT US':'访问我们', 'CALL OR WHATSAPP':'电话或 WhatsApp', 'EMAIL US':'发送邮件', 'OPENING HOURS':'营业时间', 'SEND MESSAGE':'发送消息', 'TELL US HOW WE CAN HELP.':'告诉我们如何帮助您。', 'FIND US':'查找我们', 'COME VISIT PAK DIN.':'欢迎到访 Pak Din。', 'FREQUENTLY ASKED QUESTIONS':'常见问题', 'NEED HELP?':'需要帮助吗？', 'WE LOOK FORWARD TO SERVING YOU':'期待为您服务', 'RESERVE A TABLE OR PLAN YOUR CATERING.':'预订餐桌或计划餐饮服务。', 'BOOK A TABLE':'预订餐桌', 'PLAN CATERING':'计划餐饮' }
+    };
+    Object.assign(translations.bm, contactTranslations.bm);
+    Object.assign(translations.zh, contactTranslations.zh);
     const nav = document.querySelector('.navbar');
     if (nav && !document.getElementById('languageSwitcher')) {
         const select = document.createElement('select'); select.id='languageSwitcher'; select.className='language-switcher'; select.setAttribute('aria-label','Language');

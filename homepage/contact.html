@@ -56,77 +56,47 @@
 <div class="site-bg-overlay"></div>
 
 <!-- ── CONTACT ───────────────────────────── -->
-<section class="contact-section" id="contact" style="padding-top: 160px;">
-    <div class="container">
-        <div class="contact-grid">
-            <div class="reveal">
-                <span class="section-label">Find Us</span>
-                <h2 class="section-title">Visit or Get in Touch</h2>
-                <div class="contact-info">
-                    <div class="contact-row">
-                        <div class="contact-row-icon">📍</div>
-                        <div class="contact-row-text">
-                            <h4>Address</h4>
-                            <p>Jalan Jelutung (Depan Caltex patrol station) 11600 Jelutong, Penang, Malaysia</p>
-                        </div>
-                    </div>
-                    <div class="contact-row">
-                        <div class="contact-row-icon">🕐</div>
-                        <div class="contact-row-text">
-                            <h4>Hours</h4>
-                            <p>Mon – Fri: 8:00 AM – 8:00 PM<br>Saturday: 8:00 AM – 8:00 PM<br>Sunday: Closed</p>
-                        </div>
-                    </div>
-                    <div class="contact-row">
-                        <div class="contact-row-icon">📞</div>
-                        <div class="contact-row-text">
-                            <h4>Phone / WhatsApp</h4>
-                            <a href="https://wa.me/60125033639" target="_blank" rel="noopener">+60 12-503 3639</a>
-                        </div>
-                    </div>
-                    <div class="contact-row">
-                        <div class="contact-row-icon">✉️</div>
-                        <div class="contact-row-text">
-                            <h4>Email</h4>
-                            <a href="mailto:info@pakdinnasi.com">info@pakdinnasi.com</a>
-                            <a class="google-review-link" href="https://www.google.com/maps/search/?api=1&query=Pak%20Din%20Nasi%20Dalcha%2C%20613%20Jalan%20Jelutong%2C%20Jelutong%2C%2011600%20George%20Town%2C%20Pulau%20Pinang" target="_blank" rel="noopener">Review us on Google ↗</a>
-                        </div>
-                    </div>
-                </div>
+<main class="contact-page">
+    <section class="contact-hero contact-section" id="contact">
+        <div class="container contact-hero-inner reveal">
+            <span class="section-label">Get in Touch</span>
+            <h1>Let’s plan something special.</h1>
+            <p>For table bookings, catering events, and questions about Pak Din, we are happy to help.</p>
+            <div class="contact-hero-actions">
+                <a class="btn-primary" href="#message">Send an Enquiry</a>
+                <a class="btn-outline-dark" href="https://wa.me/60125033639" target="_blank" rel="noopener">WhatsApp Us</a>
             </div>
+        </div>
+    </section>
 
-            <!-- Real <form> so the button works. contact.js opens WhatsApp with the message pre-filled. -->
+    <section class="contact-details-section">
+        <div class="container contact-detail-grid">
+            <a class="contact-detail-card reveal" href="https://maps.google.com/?q=Pak+Din+Nasi+Dalcha+Jelutong+Penang" target="_blank" rel="noopener"><span class="contact-detail-icon">⌖</span><span class="section-label">Visit Us</span><h2>Jelutong, Penang</h2><p>613, Jalan Jelutong<br>11600 George Town, Malaysia</p></a>
+            <a class="contact-detail-card reveal" href="tel:+60125033639"><span class="contact-detail-icon">◌</span><span class="section-label">Call or WhatsApp</span><h2>+60 12-503 3639</h2><p>For bookings, catering and quick questions.</p></a>
+            <a class="contact-detail-card reveal" href="mailto:info@pakdinnasi.com"><span class="contact-detail-icon">✉</span><span class="section-label">Email Us</span><h2>info@pakdinnasi.com</h2><p>We will reply as soon as possible.</p></a>
+            <div class="contact-detail-card reveal"><span class="contact-detail-icon">◷</span><span class="section-label">Opening Hours</span><h2>Daily service</h2><p>Contact us for today’s pickup and catering availability.</p></div>
+        </div>
+    </section>
+
+    <section class="contact-form-section" id="message">
+        <div class="container contact-form-layout">
+            <div class="contact-copy reveal"><span class="section-label">Send Message</span><h2>Tell us how we can help.</h2><p>Choose a booking type and send us your details. We will continue the conversation on WhatsApp.</p><div class="contact-language-note">English · Bahasa Melayu · 中文</div></div>
             <form class="contact-form reveal" id="contactForm" novalidate>
-                <h3>Send Us a Message</h3>
-                <p style="font-size:14px; color:var(--muted); margin-bottom:8px;">For catering bookings, feedback, or general enquiries.</p>
-                <div class="form-group">
-                    <label for="form-name">Your Name</label>
-                    <input id="form-name" name="name" type="text" placeholder="Ahmad bin Ali" autocomplete="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="form-phone">Phone / WhatsApp</label>
-                    <input id="form-phone" name="phone" type="tel" placeholder="+60 12-xxx xxxx" autocomplete="tel">
-                </div>
-                <div class="form-group">
-                    <label for="form-subject">Subject</label>
-                    <select id="form-subject" name="subject">
-                        <option>Catering Enquiry</option>
-                        <option>General Feedback</option>
-                        <option>Menu Question</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="form-message">Message</label>
-                    <textarea id="form-message" name="message" placeholder="How can we help you?" required></textarea>
-                </div>
-                <p id="formStatus" role="status" aria-live="polite"
-                   style="font-size:13px; min-height:20px; color:var(--muted);"></p>
-                <button type="submit" class="btn-form">Send Message</button>
+                <div class="form-group"><label for="form-name">Your Name / Nama / 姓名</label><input id="form-name" name="name" type="text" autocomplete="name" required></div>
+                <div class="form-group"><label for="form-phone">Phone / WhatsApp</label><input id="form-phone" name="phone" type="tel" autocomplete="tel" required></div>
+                <div class="form-group"><label for="form-subject">I’m enquiring about / Saya ingin bertanya tentang / 我想咨询</label><select id="form-subject" name="subject"><option>Catering Booking / Tempahan Katering / 餐饮服务预订</option><option>Table Booking / Tempahan Meja / 预订餐桌</option><option>General Enquiry / Pertanyaan Umum / 一般咨询</option></select></div>
+                <div class="form-group"><label for="form-message">Message / Mesej / 留言</label><textarea id="form-message" name="message" required placeholder="Date, number of guests, event details..."></textarea></div>
+                <p id="formStatus" role="status" aria-live="polite"></p><button type="submit" class="btn-form">Send via WhatsApp</button>
             </form>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="contact-map-section"><div class="container"><span class="section-label">Find Us</span><h2 class="section-title">Come visit Pak Din.</h2><div class="map-frame"><iframe title="Pak Din Nasi Dalcha location" src="https://www.google.com/maps?q=Pak%20Din%20Nasi%20Dalcha%20Jelutong%20Penang&output=embed" loading="lazy"></iframe></div></div></section>
+
+    <section class="contact-faq-section"><div class="container"><span class="section-label">Frequently Asked Questions</span><h2 class="section-title">Need help?</h2><div class="contact-faq-list"><details open><summary>Do I need a reservation? / Perlu tempahan?</summary><p>Reservations are recommended for table bookings and catering events, especially on weekends and public holidays.</p></details><details><summary>Can Pak Din cater for my event? / Boleh katering untuk majlis?</summary><p>Yes. Tell us your date, guest count and venue through the enquiry form for a package recommendation.</p></details><details><summary>How do I order? / Bagaimana untuk membuat pesanan?</summary><p>For pickup, use our Order page. For larger events, choose Catering Booking above.</p></details></div></div></section>
+
+    <section class="contact-cta-section"><div class="container contact-cta-card"><span class="section-label">We look forward to serving you</span><h2>Reserve a table or plan your catering.</h2><p>Authentic Nasi Dalcha, prepared with care for everyday meals and memorable occasions.</p><div class="contact-hero-actions"><a class="btn-primary" href="order.html">Book a Table</a><a class="btn-outline-dark" href="catering.html#packages">Plan Catering</a></div></div></section>
+</main>
 
 
 <!-- ── FOOTER (shared — see footer.html) ── -->
