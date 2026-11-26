@@ -657,12 +657,15 @@ ul {
     object-fit: cover;
     opacity: 0;
     transform: scale(1.04);
-    transition: opacity 1.2s ease, transform 7s ease;
+    transition: none;
 }
 
 .hero-bg-img.is-active {
     opacity: 1;
     transform: scale(1);
+}
+html.hero-ready .hero-bg-img {
+    transition: opacity 1.2s ease, transform 7s ease;
 }
 
 .hero-slides {

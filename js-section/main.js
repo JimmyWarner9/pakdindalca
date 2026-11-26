@@ -166,6 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const heroSlides = document.querySelectorAll('.hero-bg-img');
+    if (heroSlides.length) {
+        requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('hero-ready')));
+    }
     if (heroSlides.length > 1) {
         let heroIndex = 0;
         const heroContent = document.querySelector('.hero-content');
