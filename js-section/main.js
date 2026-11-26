@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const finishLoading = () => { document.documentElement.classList.remove('site-loading'); loadingScreen.classList.add('is-hidden'); document.querySelectorAll('.boot-screen').forEach(screen => { screen.classList.add('is-hidden'); setTimeout(() => screen.remove(), 450); }); setTimeout(() => loadingScreen.remove(), 450); };
     window.addEventListener('load', finishLoading, { once: true });
-    setTimeout(finishLoading, 3500);
+    // Do not make visitors wait for videos, fonts, or analytics; the layout can be used while those finish.
+    setTimeout(finishLoading, 1200);
 
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js').catch(() => {});
 
