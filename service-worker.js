@@ -1,5 +1,5 @@
-const CACHE_NAME = 'pakdin-pwa-v2';
-const APP_SHELL = ['/homepage/index.html', '/homepage/menu.html', '/homepage/order.html', '/homepage/contact.html', '/homepage/about.html', '/homepage/catering.html', '/css/style.css', '/js-section/main.js'];
+const CACHE_NAME = 'pakdin-pwa-v3';
+const APP_SHELL = ['/homepage/index.html', '/homepage/menu.html', '/homepage/order.html', '/homepage/contact.html', '/homepage/about.html', '/homepage/catering.html', '/css/style.css?v=20261126-mobile-nav-2', '/js-section/main.js?v=20261126-mobile-nav-2'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
