@@ -3499,3 +3499,33 @@ main.contact-page + .footer::before { border-radius: 30px 30px 0 0; background: 
   .mobile-bottom-nav .mobile-order:hover, .mobile-bottom-nav .mobile-order:focus-visible { color: #17202a; transform: translateY(-4px); }
   .mobile-bottom-nav .mobile-order:active { transform: translateY(-1px) scale(.97); }
 }
+
+/* Order page only: let each dish arrive with a slower, premium pop-in. */
+body:has(.order-help-card) .menu-grid .menu-card.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(.96);
+  transition: opacity .9s ease, transform 1s cubic-bezier(.18,.82,.22,1), box-shadow .5s ease;
+}
+body:has(.order-help-card) .menu-grid .menu-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+body:has(.order-help-card) .menu-grid .menu-card:nth-child(1) { transition-delay: .08s; }
+body:has(.order-help-card) .menu-grid .menu-card:nth-child(2) { transition-delay: .32s; }
+body:has(.order-help-card) .menu-grid .menu-card:nth-child(3) { transition-delay: .56s; }
+body:has(.order-help-card) .menu-grid .menu-card:nth-child(4) { transition-delay: .80s; }
+body:has(.order-help-card) .menu-grid .menu-card:nth-child(5) { transition-delay: 1.04s; }
+body:has(.order-help-card) .menu-grid .menu-card:nth-child(6) { transition-delay: 1.28s; }
+body:has(.order-help-card) .menu-grid .menu-card:nth-child(7) { transition-delay: 1.52s; }
+body:has(.order-help-card) .menu-grid .menu-card.visible .menu-card-photo {
+  animation: order-photo-pop .85s cubic-bezier(.18,.82,.22,1) both;
+}
+@keyframes order-photo-pop {
+  0% { opacity: .72; transform: scale(.92); }
+  70% { opacity: 1; transform: scale(1.025); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body:has(.order-help-card) .menu-grid .menu-card.reveal { opacity: 1; transform: none; transition: none; }
+  body:has(.order-help-card) .menu-grid .menu-card.visible .menu-card-photo { animation: none; }
+}
