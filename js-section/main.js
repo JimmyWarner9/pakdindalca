@@ -6,12 +6,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     document.documentElement.classList.add('site-loading');
-    const loadingScreen = document.createElement('div');
-    loadingScreen.className = 'site-loading-screen';
-    loadingScreen.setAttribute('role', 'status');
-    loadingScreen.setAttribute('aria-label', 'Loading Pak Din Nasi Dalcha');
-    loadingScreen.innerHTML = '<img src="/image/food-section/logo-section/pakdin_pwa_icon.png" alt="Pak Din Nasi Dalcha"><span>Preparing Pak Din…</span>';
-    document.body.appendChild(loadingScreen);
+    const loadingScreen = document.querySelector('.boot-screen') || document.createElement('div');
+    if (!loadingScreen.parentNode) {
+        loadingScreen.className = 'site-loading-screen';
+        loadingScreen.setAttribute('role', 'status');
+        loadingScreen.setAttribute('aria-label', 'Loading Pak Din Nasi Dalcha');
+        loadingScreen.innerHTML = '<img src="/image/food-section/logo-section/pakdin_pwa_icon.png" alt="Pak Din Nasi Dalcha"><span>Preparing Pak Din…</span>';
+        document.body.appendChild(loadingScreen);
+    }
     const finishLoading = () => { document.documentElement.classList.remove('site-loading'); loadingScreen.classList.add('is-hidden'); document.querySelectorAll('.boot-screen').forEach(screen => { screen.classList.add('is-hidden'); setTimeout(() => screen.remove(), 450); }); setTimeout(() => loadingScreen.remove(), 450); };
     window.addEventListener('load', finishLoading, { once: true });
     setTimeout(finishLoading, 3500);
