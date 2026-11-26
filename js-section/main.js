@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.documentElement.classList.add('site-loading');
     const loadingScreen = document.querySelector('.boot-screen') || document.createElement('div');
+    loadingScreen.classList.add('site-loading-screen');
     if (!loadingScreen.parentNode) {
         loadingScreen.className = 'site-loading-screen';
         loadingScreen.setAttribute('role', 'status');
