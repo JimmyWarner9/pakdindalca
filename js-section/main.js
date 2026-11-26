@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!video.hasAttribute('title')) video.setAttribute('title', 'Pak Din Nasi Dalcha video');
     });
     if (!document.querySelector('.mobile-bottom-nav') && !document.querySelector('.admin-shell')) {
-        const nav = document.createElement('nav'); nav.className='mobile-bottom-nav'; nav.setAttribute('aria-label','Mobile navigation'); nav.innerHTML='<a href="index.html">⌂<span>Home</span></a><a href="menu.html">▦<span>Menu</span></a><a class="mobile-order" href="order.html">＋<span>Order</span></a><a href="contact.html">⌖<span>Contact</span></a>'; document.body.appendChild(nav);
+        const nav = document.createElement('nav'); nav.className='mobile-bottom-nav'; nav.setAttribute('aria-label','Mobile navigation'); nav.innerHTML='<a href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/></svg><span>Home</span></a><a href="menu.html" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM8 4v16M12 4v16M16 4v16M4 8h16M4 12h16M4 16h16"/></svg><span>Menu</span></a><a class="mobile-order" href="order.html" aria-label="Order now"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10l1 13H6L7 7Zm3 0V5a2 2 0 0 1 4 0v2"/></svg><span>Order</span></a><a href="contact.html" aria-label="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12A7 7 0 0 0 5 9c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/></svg><span>Contact</span></a>'; document.body.appendChild(nav);
     }
 
     /* Premium gallery lightbox and smooth back-to-top control */
