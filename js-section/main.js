@@ -5,6 +5,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    document.documentElement.classList.add('site-loading');
+    const loadingScreen = document.createElement('div');
+    loadingScreen.className = 'site-loading-screen';
+    loadingScreen.setAttribute('role', 'status');
+    loadingScreen.setAttribute('aria-label', 'Loading Pak Din Nasi Dalcha');
+    loadingScreen.innerHTML = '<img src="/image/food-section/logo-section/pakdin_pwa_icon.png" alt="Pak Din Nasi Dalcha"><span>Preparing Pak Din…</span>';
+    document.body.appendChild(loadingScreen);
+    const finishLoading = () => { document.documentElement.classList.remove('site-loading'); loadingScreen.classList.add('is-hidden'); setTimeout(() => loadingScreen.remove(), 450); };
+    window.addEventListener('load', finishLoading, { once: true });
+    setTimeout(finishLoading, 3500);
+
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js').catch(() => {});
 
     /* Install prompt for Android Chrome and iPhone Safari */
@@ -39,7 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    document.querySelectorAll('img').forEach(img => { if (!img.hasAttribute('loading')) img.loading = 'lazy'; img.classList.add('image-ready'); });
+    document.querySelectorAll('img').forEach(img => {
+        const isAboveFold = img.classList.contains('hero-bg-img') || img.closest('.navbar') || img.closest('.hero-bg');
+        if (!img.hasAttribute('loading')) img.loading = isAboveFold ? 'eager' : 'lazy';
+        img.decoding = 'async';
+        if (isAboveFold) img.fetchPriority = 'high';
+        img.classList.add('image-ready');
+    });
+    document.querySelectorAll('video').forEach(video => {
+        if (!video.hasAttribute('preload')) video.preload = 'metadata';
+        if (!video.hasAttribute('title')) video.setAttribute('title', 'Pak Din Nasi Dalcha video');
+    });
     if (!document.querySelector('.mobile-bottom-nav') && !document.querySelector('.admin-shell')) {
         const nav = document.createElement('nav'); nav.className='mobile-bottom-nav'; nav.setAttribute('aria-label','Mobile navigation'); nav.innerHTML='<a href="index.html">⌂<span>Home</span></a><a href="menu.html">▦<span>Menu</span></a><a class="mobile-order" href="order.html">＋<span>Order</span></a><a href="contact.html">⌖<span>Contact</span></a>'; document.body.appendChild(nav);
     }

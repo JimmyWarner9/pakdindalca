@@ -41,6 +41,10 @@ body {
     min-height: 100%;
     overscroll-behavior-y: none;
 }
+.site-loading-screen { position: fixed; inset: 0; z-index: 5000; display: grid; place-items: center; align-content: center; gap: 14px; background: #101820; color: #f2c979; font: 600 11px 'Poppins', sans-serif; letter-spacing: 2px; text-transform: uppercase; opacity: 1; transition: opacity .35s ease, visibility .35s ease; }
+.site-loading-screen img { width: 68px; height: 68px; object-fit: contain; animation: loading-pulse 1.2s ease-in-out infinite; }
+.site-loading-screen.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+@keyframes loading-pulse { 0%, 100% { transform: scale(.96); opacity: .72; } 50% { transform: scale(1); opacity: 1; } }
 
 .scroll-progress {
     position: fixed;
@@ -3312,6 +3316,19 @@ main.contact-page + .footer {
 main.contact-page + .footer::before { border-radius: 30px 30px 0 0; background: rgba(3,19,25,.32); }
 @media (max-width: 900px) { .contact-detail-grid { grid-template-columns: repeat(2, 1fr); } .contact-form-layout { grid-template-columns: 1fr; gap: 36px; } }
 @media (max-width: 560px) { .contact-hero { min-height: 58vh; padding: 190px 0 70px; } .contact-detail-grid { grid-template-columns: 1fr; } .contact-details-section, .contact-form-section, .contact-map-section, .contact-faq-section { padding: 70px 0; } .contact-form { padding: 24px 18px; } .map-frame { height: 320px; } }
+
+@media (max-width: 760px) {
+  .container { padding-left: 18px; padding-right: 18px; }
+  .section-title { font-size: clamp(30px, 9vw, 46px); line-height: 1.14; }
+  .hero-content h1 { font-size: clamp(38px, 11vw, 62px); line-height: 1.05; }
+  .hero-content p { max-width: 92vw; font-size: 14px; line-height: 1.65; }
+  .hero-cta-group { gap: 9px; flex-wrap: wrap; }
+  .hero-cta-group a { min-height: 48px; padding: 13px 16px; font-size: 10px; }
+  .contact-hero h1 { font-size: clamp(38px, 10vw, 58px); }
+  .contact-hero p { font-size: 14px; line-height: 1.65; }
+  .contact-detail-card h2 { font-size: 22px; }
+  .contact-hero-actions .btn-outline-dark, .contact-hero-actions .btn-primary { width: min(100%, 280px); }
+}
 
 /* Keep the native language menu in the same premium palette when opened. */
 .language-switcher { color-scheme: dark; }
